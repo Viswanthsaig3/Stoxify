@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { TrendingUp, BarChart3, Shield, Users } from 'lucide-react'
 

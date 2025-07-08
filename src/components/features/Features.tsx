@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { BarChart3, TrendingUp, Shield, Users, Target, Zap } from 'lucide-react'
+import { BarChart3, TrendingUp, Shield, Users, Target } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import Image from 'next/image'
 

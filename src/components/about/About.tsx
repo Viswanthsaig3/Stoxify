@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { TrendingUp, Users, Shield, Award, CheckCircle, ArrowRight, BarChart3 } from 'lucide-react'
+import { TrendingUp, Users, Shield, Award, CheckCircle, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 
 const aboutStats = [
