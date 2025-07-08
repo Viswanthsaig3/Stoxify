@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Menu, X, TrendingUp, Home, Star, Users, DollarSign, MessageCircle } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
+import { Menu, X, Home, Star, Users, DollarSign, MessageCircle } from 'lucide-react'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -51,9 +52,13 @@ export default function Navbar() {
           <div className="flex items-center space-x-2">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-green-600 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
-              <div className="relative bg-gradient-to-r from-blue-600 to-green-600 p-2 rounded-lg">
-                <TrendingUp className="w-6 h-6 text-white" />
-              </div>
+                <Image
+                  src="/images/StoxifyLogo.PNG"
+                  alt="Stoxify Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-lg"
+                />
             </div>
             <div className="flex flex-col">
               <h1 className="text-xl font-bold font-display tracking-wider">
