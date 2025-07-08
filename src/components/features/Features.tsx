@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { BarChart3, TrendingUp, Shield, Users, BookOpen, Target, ArrowRight, Zap } from 'lucide-react'
+import { BarChart3, TrendingUp, Shield, Users, Target, Zap } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 
 const features = [
@@ -41,15 +41,6 @@ const features = [
     bgGradient: "from-blue-50 to-blue-100",
     stat: "50K+",
     statLabel: "Active Traders"
-  },
-  {
-    icon: BookOpen,
-    title: "Educational Resources",
-    description: "Extensive library of trading courses and educational materials",
-    color: "text-blue-600",
-    bgGradient: "from-blue-50 to-blue-100",
-    stat: "1000+",
-    statLabel: "Courses"
   },
   {
     icon: Target,
@@ -223,61 +214,10 @@ export default function Features() {
                       {feature.statLabel}
                     </div>
                   </div>
-
-                  {/* Hover Arrow */}
-                  <motion.div
-                    className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100"
-                    initial={{ x: -10, opacity: 0 }}
-                    whileHover={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white group-hover:bg-blue-700 transition-colors duration-300">
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
-                  </motion.div>
                 </div>
               </Card>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mt-20"
-        >
-          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-3xl p-8 max-w-2xl mx-auto relative overflow-hidden">
-            
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <svg className="w-full h-full" viewBox="0 0 400 200" fill="none">
-                <path d="M0 100 Q100 50 200 100 T400 100" stroke="#3b82f6" strokeWidth="2" fill="none"/>
-                <path d="M0 120 Q100 80 200 120 T400 120" stroke="#3b82f6" strokeWidth="1" fill="none" opacity="0.6"/>
-              </svg>
-            </div>
-
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold font-display text-gray-900 mb-4">
-                Ready to Start Trading?
-              </h3>
-              <p className="text-gray-700 font-body mb-6">
-                Join thousands of successful traders using our professional platform
-              </p>
-              <motion.button 
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="flex items-center gap-2">
-                  Get Started Today
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </motion.button>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
