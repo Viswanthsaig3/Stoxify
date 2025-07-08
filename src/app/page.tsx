@@ -12,38 +12,38 @@ export default function Home() {
     <>
       <Navbar />
       <main className="min-h-screen">
-        {/* Hero Section - Dark Navy */}
-        <section className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800">
+        {/* Hero Section - Premium Dark Blue Gradient */}
+        <section className="bg-premium-gradient">
           <Hero />
         </section>
         
-        {/* Features Section - White */}
-        <section className="bg-white">
+        {/* Features Section - Clean White with Blue Accents */}
+        <section className="bg-white-100">
           <Features />
         </section>
         
-        {/* About Section - Dark Navy (Hero Style) */}
-        <section className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800">
+        {/* About Section - Dark Midnight Blue */}
+        <section className="bg-gradient-to-br from-midnightblue-400 via-midnightblue-200 to-slateblue-300">
           <About />
         </section>
         
-        {/* Community Section - White */}
-        <section className="bg-white">
+        {/* Community Section - Light Blue Background */}
+        <section className="bg-gradient-to-br from-aliceblue-100 to-white-100">
           <Community />
         </section>
         
-        {/* Pricing Section - Dark Navy (Hero Style) */}
-        <section className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800">
+        {/* Pricing Section - Premium Blue Gradient */}
+        <section className="bg-gradient-to-br from-slateblue-100 via-royalblue-700 to-mediumslateblue-300">
           <Pricing />
         </section>
         
-        {/* Testimonials Section - White */}
-        <section className="bg-white">
+        {/* Testimonials Section - Clean White */}
+        <section className="bg-white-100">
           <Testimonials />
         </section>
         
-        {/* Footer Section - Dark Navy */}
-        <section className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800">
+        {/* Footer Section - Deep Midnight */}
+        <section className="bg-gradient-to-br from-black-1000 via-midnightblue-500 to-midnightblue-100">
           <Footer />
         </section>
       </main>

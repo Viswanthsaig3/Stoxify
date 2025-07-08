@@ -1,109 +1,92 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
+import { TrendingUp, BarChart3, Shield } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { StockCandleAnimation } from './StockCandleAnimation'
-import { TrendingUp, Users, BookOpen, GraduationCap } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-hero-gradient" />
-      <div className="absolute inset-0 bg-black/20" />
-      
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-secondary-400/10 blur-xl animate-float" />
-      <div className="absolute top-40 right-20 w-32 h-32 rounded-full bg-accent-400/10 blur-xl animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-20 left-20 w-24 h-24 rounded-full bg-primary-400/10 blur-xl animate-float" style={{ animationDelay: '4s' }} />
-      
+    <section className="relative min-h-screen bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900 overflow-hidden">
+      {/* Trading Background */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=800&fit=crop&crop=center" 
+          alt="Trading floor background"
+          className="w-full h-full object-cover opacity-5 blur-sm"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
+      </div>
+
+      {/* Financial Chart Pattern Overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <svg className="w-full h-full" viewBox="0 0 1200 800" fill="none">
+          <defs>
+            <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+              <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#3b82f6" strokeWidth="0.5" opacity="0.3"/>
+            </pattern>
+            <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#1e40af" />
+              <stop offset="50%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#60a5fa" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+          <path d="M0 600 Q300 400 600 450 T1200 300" stroke="url(#chartGradient)" strokeWidth="3" fill="none" opacity="0.6"/>
+          <path d="M0 650 Q200 500 500 520 T1200 400" stroke="url(#chartGradient)" strokeWidth="2" fill="none" opacity="0.4"/>
+        </svg>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display text-white mb-8 leading-tight">
-                India&apos;s{' '}
-                <span className="bg-gradient-to-r from-secondary-400 via-secondary-500 to-secondary-600 bg-clip-text text-transparent">
-                  Largest
-                </span>{' '}
-                Trading Community
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl font-body font-light leading-relaxed">
-                Join our vibrant educational community focused on swing trading. Learn from experts with purely educational content designed to enhance your understanding of the stock market.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-secondary-500 via-secondary-600 to-secondary-700 hover:from-secondary-600 hover:via-secondary-700 hover:to-secondary-800 text-white font-semibold font-premium px-12 py-4 rounded-full transition-all duration-500 transform hover:scale-105 shadow-2xl shadow-secondary-500/25 hover:shadow-secondary-500/50 border border-secondary-400/20"
-                >
-                  Join Learning Community
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 px-12 py-4 rounded-full transition-all duration-300 font-premium backdrop-blur-sm"
-                >
-                  Explore Content
-                </Button>
-              </div>
-            </motion.div>
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center max-w-4xl mx-auto">
             
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6"
-            >
-              {[
-                { icon: Users, value: '20K+', label: 'Learning Community' },
-                { icon: BookOpen, value: '500+', label: 'Educational Resources' },
-                { icon: GraduationCap, value: '5000+', label: 'Students Educated' },
-                { icon: TrendingUp, value: '4.8★', label: 'Community Rating' }
-              ].map((stat, index) => (
-                <div key={index} className="text-center group">
-                  <div className="flex justify-center mb-3">
-                    <div className="p-2 rounded-full bg-gradient-to-r from-secondary-500/20 to-accent-500/20 backdrop-blur-sm border border-white/10 group-hover:border-secondary-400/30 transition-all duration-300">
-                      <stat.icon className="w-5 h-5 text-secondary-400 group-hover:text-secondary-300 transition-colors duration-300" />
-                    </div>
-                  </div>
-                  <div className="text-3xl font-bold font-display text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-gray-400 font-premium tracking-wide">{stat.label}</div>
-                </div>
-              ))}
-            </motion.div>
+            {/* Main Heading */}
+            <h1 className="text-6xl md:text-8xl font-bold font-display text-white mb-8 leading-tight">
+              India's Largest{' '}
+              <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                Trading Community
+              </span>
+            </h1>
+            
+            {/* Subtitle */}
+            <p className="text-2xl text-gray-300 max-w-2xl mx-auto font-body font-light leading-relaxed mb-12">
+              Professional trading education platform trusted by thousands of traders across India
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white font-semibold px-10 py-5 text-xl rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/50 border border-blue-400/20">
+                <TrendingUp className="w-6 h-6 mr-3" />
+                Start Trading Journey
+              </Button>
+              
+              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/40 font-semibold px-10 py-5 text-xl rounded-2xl transition-all duration-300 backdrop-blur">
+                <BarChart3 className="w-6 h-6 mr-3" />
+                View Platform
+              </Button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex items-center justify-center gap-8 mt-16">
+              <div className="flex items-center gap-2 text-gray-300">
+                <Shield className="w-5 h-5 text-blue-400" />
+                <span className="font-body text-sm">SEBI Registered</span>
+              </div>
+              <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <TrendingUp className="w-5 h-5 text-blue-400" />
+                <span className="font-body text-sm">Premium Platform</span>
+              </div>
+              <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <BarChart3 className="w-5 h-5 text-blue-400" />
+                <span className="font-body text-sm">Advanced Analytics</span>
+              </div>
+            </div>
           </div>
-          
-          {/* Right Content - 2D Stock Candle Animation */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="relative h-[500px] lg:h-[600px]"
-          >
-            <StockCandleAnimation />
-          </motion.div>
         </div>
       </div>
-      
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full animate-pulse mt-2" />
-        </div>
-      </motion.div>
     </section>
   )
 }

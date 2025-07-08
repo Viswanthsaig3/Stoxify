@@ -1,189 +1,216 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Check, Star, Crown, Zap } from 'lucide-react'
-import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { Badge } from '@/components/ui/Badge'
 
 const pricingPlans = [
   {
-    name: "Learner",
-    duration: "3 Months",
-    price: 2999,
-    originalPrice: 4999,
-    popular: false,
-    icon: Zap,
-    iconColor: "text-blue-400",
-    gradient: "from-blue-500/10 to-blue-600/10",
+    name: "Basic",
+    price: "₹999",
+    period: "month",
+    description: "Perfect for beginners starting their trading journey",
     features: [
-      "Basic educational content",
-      "Weekly market analysis (educational)",
+      "Access to basic trading courses",
+      "Community forum access",
+      "Basic market insights",
       "Email support",
-      "Access to community forum",
-      "Basic risk management education",
       "Mobile app access"
-    ]
-  },
-  {
-    name: "Scholar",
-    duration: "6 Months",
-    price: 4999,
-    originalPrice: 8999,
-    popular: true,
-    icon: Star,
-    iconColor: "text-yellow-400",
-    gradient: "from-yellow-500/10 to-yellow-600/10",
-    features: [
-      "Advanced educational content",
-      "Daily market analysis (educational)",
-      "Priority support",
-      "Live educational sessions",
-      "Advanced risk management education",
-      "Personal learning mentor",
-      "Mobile app access",
-      "Weekly learning progress review"
-    ]
-  },
-  {
-    name: "Expert Learner",
-    duration: "12 Months",
-    price: 7999,
-    originalPrice: 14999,
+    ],
     popular: false,
-    icon: Crown,
-    iconColor: "text-purple-400",
-    gradient: "from-purple-500/10 to-purple-600/10",
+    icon: Star
+  },
+  {
+    name: "Professional",
+    price: "₹2,999",
+    period: "month",
+    description: "Ideal for serious traders seeking advanced knowledge",
     features: [
-      "Premium educational content",
-      "Real-time market education alerts",
-      "24/7 support",
-      "Daily live educational sessions",
-      "Portfolio analysis education",
-      "One-on-one educational mentorship",
-      "Educational API access",
-      "Exclusive learning strategies",
-      "Custom risk analysis education",
-      "Priority community access"
-    ]
+      "All Basic features",
+      "Advanced trading strategies",
+      "Live trading sessions",
+      "Premium analytics tools",
+      "Priority support",
+      "1-on-1 mentorship sessions",
+      "Exclusive webinars"
+    ],
+    popular: true,
+    icon: Crown
+  },
+  {
+    name: "Elite",
+    price: "₹5,999",
+    period: "month",
+    description: "Ultimate platform access for professional traders",
+    features: [
+      "All Professional features",
+      "Personal trading coach",
+      "Custom strategy development",
+      "Real-time portfolio analysis",
+      "VIP community access",
+      "Direct expert consultation",
+      "Advanced risk management tools"
+    ],
+    popular: false,
+    icon: Zap
   }
 ]
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative py-20 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 scroll-mt-16">
-      <div className="absolute inset-0 bg-black/20" />
-      
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-secondary-400/10 blur-xl animate-float" />
-      <div className="absolute top-40 right-20 w-32 h-32 rounded-full bg-accent-400/10 blur-xl animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-20 left-20 w-24 h-24 rounded-full bg-primary-400/10 blur-xl animate-float" style={{ animationDelay: '4s' }} />
-      
+    <section id="pricing" className="relative py-24 bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900 overflow-hidden">
+      {/* Trading Background */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=800&fit=crop&crop=center" 
+          alt="Trading floor background"
+          className="w-full h-full object-cover opacity-5 blur-sm"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
+      </div>
+
+      {/* Financial Chart Pattern Overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <svg className="w-full h-full" viewBox="0 0 1200 800" fill="none">
+          <defs>
+            <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+              <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#3b82f6" strokeWidth="0.5" opacity="0.3"/>
+            </pattern>
+            <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#1e40af" />
+              <stop offset="50%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#60a5fa" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+          <path d="M0 600 Q300 400 600 450 T1200 300" stroke="url(#chartGradient)" strokeWidth="3" fill="none" opacity="0.6"/>
+          <path d="M0 650 Q200 500 500 520 T1200 400" stroke="url(#chartGradient)" strokeWidth="2" fill="none" opacity="0.4"/>
+        </svg>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold font-display text-white mb-8 leading-tight">
-            Learning Membership{' '}
-            <span className="bg-gradient-to-r from-secondary-400 via-secondary-500 to-accent-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold font-display text-white mb-6 leading-tight">
+            Premium{' '}
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
               Plans
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-body font-light leading-relaxed">
-            Choose your level of access to our educational trading ecosystem. Each plan unlocks exclusive learning benefits and personalized educational support.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-body leading-relaxed">
+            Choose the perfect plan to accelerate your trading journey with professional tools and expert guidance
           </p>
         </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="relative"
+              className={`relative group ${plan.popular ? 'md:scale-105' : ''}`}
             >
+              {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <Badge className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 text-sm font-semibold">
+                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
                     Most Popular
-                  </Badge>
+                  </div>
                 </div>
               )}
-              
-              <Card className={`h-full p-8 bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 glass hover:shadow-xl ${plan.popular ? 'ring-2 ring-secondary-500/50' : ''}`}>
+
+              <div className={`h-full bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg border rounded-3xl p-8 transition-all duration-300 ${
+                plan.popular 
+                  ? 'border-blue-400/40 shadow-2xl shadow-blue-500/20' 
+                  : 'border-white/10 hover:border-white/20 hover:shadow-xl'
+              }`}>
+                
+                {/* Plan Header */}
                 <div className="text-center mb-8">
-                  <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${plan.gradient} border border-white/20 mb-4`}>
-                    <plan.icon className={`w-8 h-8 ${plan.iconColor}`} />
+                  <div className={`w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center ${
+                    plan.popular 
+                      ? 'bg-gradient-to-br from-blue-500 to-blue-600' 
+                      : 'bg-gradient-to-br from-white/10 to-white/20'
+                  }`}>
+                    <plan.icon className={`w-8 h-8 ${plan.popular ? 'text-white' : 'text-blue-400'}`} />
                   </div>
                   
                   <h3 className="text-2xl font-bold font-display text-white mb-2">
                     {plan.name}
                   </h3>
                   
-                  <div className="text-gray-300 mb-4 font-premium">
-                    {plan.duration}
+                  <p className="text-gray-400 text-sm font-body mb-6">
+                    {plan.description}
+                  </p>
+                  
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold text-white font-display">
+                      {plan.price}
+                    </span>
+                    <span className="text-gray-400 font-body">
+                      /{plan.period}
+                    </span>
                   </div>
                   
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <span className="text-3xl text-gray-400 line-through">
-                      ₹{plan.originalPrice.toLocaleString()}
-                    </span>
-                    <span className="text-4xl font-bold text-white">
-                      ₹{plan.price.toLocaleString()}
-                    </span>
-                  </div>
-                  
-                  <div className="text-secondary-400 font-semibold">
-                    Save ₹{(plan.originalPrice - plan.price).toLocaleString()}
-                  </div>
+                  <Button 
+                    className={`w-full py-3 px-6 rounded-2xl font-semibold transition-all duration-300 ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg shadow-blue-500/25'
+                        : 'bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/40'
+                    }`}
+                  >
+                    Get Started
+                  </Button>
                 </div>
-                
-                <ul className="space-y-4 mb-8">
+
+                {/* Features List */}
+                <div className="space-y-4">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-secondary-400 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-300 font-body">{feature}</span>
-                    </li>
+                    <div key={featureIndex} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                        <Check className="w-3 h-3 text-blue-400" />
+                      </div>
+                      <span className="text-gray-300 font-body text-sm">
+                        {feature}
+                      </span>
+                    </div>
                   ))}
-                </ul>
-                
-                <Button 
-                  className={`w-full py-4 font-semibold font-premium text-lg transition-all duration-500 ${
-                    plan.popular 
-                      ? 'bg-gradient-to-r from-secondary-500 via-secondary-600 to-secondary-700 hover:from-secondary-600 hover:via-secondary-700 hover:to-secondary-800 text-white shadow-2xl shadow-secondary-500/25 hover:shadow-secondary-500/50 border border-secondary-400/20' 
-                      : 'bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/40'
-                  }`}
-                >
-                  {plan.popular ? 'Join Learning Community' : 'Select Plan'}
-                </Button>
-              </Card>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
-        
-        {/* Money Back Guarantee */}
+
+        {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-20"
         >
-          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-lg border border-white/10 rounded-full px-6 py-3">
-            <Check className="w-5 h-5 text-secondary-400" />
-            <span className="text-white font-medium font-premium">30-Day Money Back Guarantee</span>
+          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg border border-white/10 rounded-3xl p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold font-display text-white mb-4">
+              Risk-Free 30-Day Trial
+            </h3>
+            <p className="text-gray-300 font-body mb-6">
+              Try any plan risk-free for 30 days. Cancel anytime with full money-back guarantee.
+            </p>
+            <div className="text-sm text-gray-400 font-body">
+              All plans include SEBI compliance guidelines and educational disclaimers
+            </div>
           </div>
-          
-          <p className="text-gray-300 mt-4 max-w-2xl mx-auto font-body">
-            We&apos;re confident in our educational platform. If you&apos;re not satisfied within 30 days, we&apos;ll refund your money. No questions asked.
-          </p>
         </motion.div>
       </div>
     </section>

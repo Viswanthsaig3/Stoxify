@@ -1,151 +1,189 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
-import { Users, MessageSquare, BookOpen, TrendingUp, Clock, Star } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
+import { Users, MessageCircle, TrendingUp, Award, BookOpen, Shield } from 'lucide-react'
+import { Card } from '@/components/ui/Card'
+
+const communityFeatures = [
+  {
+    icon: Users,
+    title: "Expert Traders",
+    description: "Connect with professional traders and industry experts",
+    color: "text-blue-600"
+  },
+  {
+    icon: MessageCircle,
+    title: "Live Discussions",
+    description: "Join real-time market discussions and analysis",
+    color: "text-blue-600"
+  },
+  {
+    icon: TrendingUp,
+    title: "Market Insights",
+    description: "Access exclusive market insights and trading strategies",
+    color: "text-blue-600"
+  },
+  {
+    icon: Award,
+    title: "Premium Content",
+    description: "Educational content from certified trading professionals",
+    color: "text-blue-600"
+  },
+  {
+    icon: BookOpen,
+    title: "Learning Resources",
+    description: "Comprehensive trading guides and educational materials",
+    color: "text-blue-600"
+  },
+  {
+    icon: Shield,
+    title: "Safe Environment",
+    description: "Moderated community with professional standards",
+    color: "text-blue-600"
+  }
+]
 
 export default function Community() {
   return (
-    <section id="community" className="py-20 bg-gradient-to-br from-white to-gray-50 scroll-mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+    <section id="community" className="relative py-24 bg-white overflow-hidden">
+      {/* Trading Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop&crop=center" 
+          alt="Trading community background"
+          className="w-full h-full object-cover opacity-5"
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-5xl md:text-6xl font-bold font-display text-gray-900 mb-6 leading-tight">
+            Trading{' '}
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent">
+              Community
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-body leading-relaxed">
+            Join India's most professional trading community and accelerate your learning journey
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-6"
-          >
-            Learning <span className="gradient-text">Community</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto font-body"
           >
-            Join thousands of passionate learners exploring the world of swing trading through educational content and community discussions
-          </motion.p>
+            <div className="relative h-96 rounded-2xl overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&crop=center" 
+                alt="Trading community"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
+              
+              {/* Floating Stats */}
+              <div className="absolute top-6 left-6">
+                <div className="bg-white/90 backdrop-blur rounded-xl p-4">
+                  <div className="text-2xl font-bold text-gray-900">50K+</div>
+                  <div className="text-sm text-gray-600">Active Members</div>
+                </div>
+              </div>
+              
+              <div className="absolute bottom-6 right-6">
+                <div className="bg-white/90 backdrop-blur rounded-xl p-4">
+                  <div className="text-2xl font-bold text-gray-900">24/7</div>
+                  <div className="text-sm text-gray-600">Community Support</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-3xl font-bold font-display text-gray-900 mb-6">
+                Why Join Our Community?
+              </h3>
+              <p className="text-lg text-gray-600 font-body leading-relaxed mb-6">
+                Connect with thousands of professional traders, access exclusive market insights, 
+                and accelerate your trading journey through peer-to-peer learning.
+              </p>
+              <p className="text-lg text-gray-600 font-body leading-relaxed">
+                Our community maintains high professional standards with SEBI compliance 
+                and moderated discussions focused on education and market analysis.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+              <h4 className="text-xl font-bold text-gray-900 mb-4 font-display">
+                Community Guidelines
+              </h4>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <span>Educational content only • No investment advice</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <span>SEBI disclaimer applies • Professional standards</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <span>Respectful discussions • Expert moderation</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Community Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {[
-            {
-              icon: Users,
-              title: "Active Community",
-              description: "Connect with 20,000+ passionate traders and learners",
-              highlight: "20K+ Members"
-            },
-            {
-              icon: MessageSquare,
-              title: "Daily Discussions",
-              description: "Engage in meaningful conversations about market trends",
-              highlight: "1000+ Daily Posts"
-            },
-            {
-              icon: BookOpen,
-              title: "Educational Content",
-              description: "Access comprehensive swing trading educational materials",
-              highlight: "500+ Resources"
-            },
-            {
-              icon: TrendingUp,
-              title: "Market Analysis",
-              description: "Learn from detailed market analysis and educational insights",
-              highlight: "Educational Only"
-            },
-            {
-              icon: Clock,
-              title: "Real-time Learning",
-              description: "Stay updated with live educational sessions and webinars",
-              highlight: "Live Sessions"
-            },
-            {
-              icon: Star,
-              title: "Quality Content",
-              description: "Curated educational content focused on swing trading",
-              highlight: "4.8★ Rating"
-            }
-          ].map((feature, index) => (
+        {/* Community Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {communityFeatures.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-white border border-gray-200 p-8 rounded-2xl hover:shadow-xl hover:border-secondary-300 transition-all duration-300 group"
+              className="group"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="w-6 h-6 text-white" />
-              </div>
-              <div className="mb-4">
-                <span className="text-secondary-500 text-sm font-mono tracking-wide">
-                  {feature.highlight}
-                </span>
-              </div>
-              <h3 className="text-xl font-bold font-display text-gray-900 mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 font-body leading-relaxed">
-                {feature.description}
-              </p>
+              <Card className="h-full p-8 bg-white border border-gray-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-blue-100">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className={`w-8 h-8 ${feature.color}`} />
+                  </div>
+                  
+                  <h3 className="text-xl font-bold font-display text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 font-body leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>
-
-        {/* Community Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="bg-white border border-gray-200 p-8 rounded-2xl mb-12 shadow-lg"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "20,000+", label: "Learning Members" },
-              { value: "5,000+", label: "Students Educated" },
-              { value: "500+", label: "Educational Resources" },
-              { value: "95%", label: "Satisfaction Rate" }
-            ].map((stat, index) => (
-              <div key={index} className="space-y-2">
-                <div className="text-3xl md:text-4xl font-bold font-display text-secondary-500">
-                  {stat.value}
-                </div>
-                <div className="text-gray-600 font-body text-sm">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold font-display text-gray-900 mb-6">
-            Ready to Start Your Learning Journey?
-          </h3>
-          <p className="text-gray-600 font-body mb-8 max-w-2xl mx-auto">
-            Join our educational community and start learning about swing trading with comprehensive resources and expert insights.
-          </p>
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-secondary-500 via-secondary-600 to-secondary-700 hover:from-secondary-600 hover:via-secondary-700 hover:to-secondary-800 text-white font-semibold font-premium px-12 py-4 rounded-full transition-all duration-500 transform hover:scale-105 shadow-2xl shadow-secondary-500/25 hover:shadow-secondary-500/50"
-          >
-            Join Learning Community
-          </Button>
-          <p className="text-gray-500 text-sm mt-4 font-body">
-            Educational content only • No investment advice • SEBI disclaimer applies
-          </p>
-        </motion.div>
       </div>
     </section>
   )

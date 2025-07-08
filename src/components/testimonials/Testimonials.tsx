@@ -1,199 +1,179 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
-import { Star, Quote, TrendingUp, Calendar } from 'lucide-react'
-import { Card } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
+import { Star, Quote } from 'lucide-react'
 
 const testimonials = [
   {
-    name: "Rahul Sharma",
-    role: "Software Engineer",
-    location: "Bangalore",
-    avatar: "RS",
-    content: "Stoxify's educational content completely transformed my understanding of swing trading. The structured learning modules helped me grasp complex concepts easily. The community discussions are incredibly valuable for learning!",
-    achievement: "Enhanced Knowledge",
-    duration: "6 months",
-    rating: 5,
-    verified: true
-  },
-  {
-    name: "Priya Patel",
-    role: "Business Owner",
+    name: "Rajesh Kumar",
+    role: "Professional Trader",
     location: "Mumbai",
-    avatar: "PP",
-    content: "The live educational sessions and mentorship helped me understand market psychology like never before. Best investment in my learning journey. The risk management education saved me from making costly mistakes.",
-    achievement: "Deep Understanding",
-    duration: "8 months",
     rating: 5,
-    verified: true
+    text: "Stoxify transformed my trading approach completely. The educational content is top-notch and the community support is incredible.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
   },
   {
-    name: "Amit Kumar",
-    role: "Chartered Accountant",
+    name: "Priya Sharma", 
+    role: "Investment Analyst",
     location: "Delhi",
-    avatar: "AK",
-    content: "Professional educational approach with excellent learning strategies. The mentorship program accelerated my learning curve significantly. From a complete beginner to knowledgeable learner in just a few months.",
-    achievement: "Skill Development",
-    duration: "12 months",
     rating: 5,
-    verified: true
+    text: "The professional tools and analytics provided by Stoxify are exactly what I needed to enhance my trading strategies.",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+  },
+  {
+    name: "Arjun Patel",
+    role: "Swing Trader",
+    location: "Bangalore",
+    rating: 5,
+    text: "Best trading education platform in India. The mentorship and community have been invaluable for my growth.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
   },
   {
     name: "Sneha Reddy",
-    role: "Marketing Manager",
+    role: "Day Trader",
     location: "Hyderabad",
-    avatar: "SR",
-    content: "The educational insights and learning materials have been incredibly comprehensive. The educational resources are top-notch, making complex trading concepts easy to understand. Highly recommend for serious learners.",
-    achievement: "Concept Mastery",
-    duration: "7 months",
     rating: 5,
-    verified: true
+    text: "The risk management tools and educational resources helped me become a more disciplined and profitable trader.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
   },
   {
     name: "Vikram Singh",
-    role: "Doctor",
-    location: "Pune",
-    avatar: "VS",
-    content: "Being a busy professional, I needed flexible learning options. Stoxify's educational content and structured modules allowed me to learn effectively without spending hours. The learning schedule works perfectly for professionals.",
-    achievement: "Flexible Learning",
-    duration: "4 months",
+    role: "Portfolio Manager",
+    location: "Chennai",
     rating: 5,
-    verified: true
+    text: "Stoxify's premium platform offers institutional-grade tools accessible to individual traders. Highly recommended.",
+    image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=150&h=150&fit=crop&crop=face"
   },
   {
-    name: "Meera Gupta",
-    role: "IT Consultant",
-    location: "Chennai",
-    avatar: "MG",
-    content: "The community aspect is what sets Stoxify apart. Learning from other experienced members and sharing educational insights has been invaluable. The platform's user-friendly interface makes learning enjoyable.",
-    achievement: "Community Learning",
-    duration: "10 months",
+    name: "Anita Joshi",
+    role: "Options Trader",
+    location: "Pune",
     rating: 5,
-    verified: true
+    text: "The advanced analytics and expert community at Stoxify have significantly improved my trading performance.",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face"
   }
 ]
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-20 bg-gradient-to-br from-white to-gray-50 scroll-mt-16">
-      <div className="absolute inset-0 bg-gray-50/20" />
-      
+    <section className="relative py-24 bg-white overflow-hidden">
+      {/* Trading Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=600&fit=crop&crop=center" 
+          alt="Financial success background"
+          className="w-full h-full object-cover opacity-5"
+        />
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-6">
-            Learning Stories from Our{' '}
-            <span className="gradient-text">Community</span>
+          <h2 className="text-5xl md:text-6xl font-bold font-display text-gray-900 mb-6 leading-tight">
+            Trader{' '}
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent">
+              Success Stories
+            </span>
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-body font-medium">
-            Discover how thousands of learners have enhanced their trading knowledge with Stoxify's comprehensive educational content and community support.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-body leading-relaxed">
+            Discover how thousands of traders have transformed their journey with our professional platform
           </p>
         </motion.div>
-        
+
+        {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
               className="group"
             >
-              <Card className="h-full p-6 bg-white border border-gray-200 hover:border-secondary-300 transition-all duration-300 shadow-lg hover:shadow-xl">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-full flex items-center justify-center text-white font-bold font-display">
-                      {testimonial.avatar}
-                    </div>
-                    <div>
-                      <h3 className="text-gray-900 font-bold font-display text-lg">{testimonial.name}</h3>
-                      <p className="text-gray-700 text-sm font-body font-medium">{testimonial.role}</p>
-                      <p className="text-gray-600 text-xs font-body">{testimonial.location}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-2">
-                    {testimonial.verified && (
-                      <Badge className="bg-secondary-50 text-secondary-700 border-secondary-200 font-body font-medium">
-                        Verified
-                      </Badge>
-                    )}
-                  </div>
+              <div className="bg-white border border-gray-200 hover:border-blue-300 rounded-2xl p-8 shadow-lg hover:shadow-xl group-hover:shadow-blue-100 transition-all duration-300 h-full">
+                
+                {/* Quote Icon */}
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mb-6">
+                  <Quote className="w-6 h-6 text-blue-600" />
                 </div>
                 
                 {/* Rating */}
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-5 h-5 fill-blue-500 text-blue-500" />
                   ))}
                 </div>
                 
-                {/* Quote */}
-                <div className="relative mb-6">
-                  <Quote className="absolute -top-2 -left-2 w-8 h-8 text-secondary-400/40" />
-                  <p className="text-gray-800 leading-relaxed pl-6 font-body font-medium">
-                    &ldquo;{testimonial.content}&rdquo;
-                  </p>
-                </div>
+                {/* Testimonial Text */}
+                <p className="text-gray-700 font-body leading-relaxed mb-6 text-lg">
+                  "{testimonial.text}"
+                </p>
                 
-                {/* Stats */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-secondary-600" />
-                    <span className="text-secondary-700 font-bold font-display">{testimonial.achievement}</span>
-                    <span className="text-gray-600 text-sm font-body font-medium">achievement</span>
-                  </div>
-                  
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-gray-600" />
-                    <span className="text-gray-700 text-sm font-body font-medium">{testimonial.duration}</span>
+                {/* Author Info */}
+                <div className="flex items-center gap-4">
+                  <img 
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 className="font-bold text-gray-900 font-display">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-gray-600 text-sm font-body">
+                      {testimonial.role} • {testimonial.location}
+                    </p>
                   </div>
                 </div>
-              </Card>
+              </div>
             </motion.div>
           ))}
         </div>
-        
+
         {/* Bottom Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-20"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold font-display text-gray-900 mb-2">20,000+</div>
-              <div className="text-gray-700 font-body font-medium">Happy Learners</div>
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-gray-900 font-display mb-2">
+                  50,000+
+                </div>
+                <div className="text-gray-600 font-body">
+                  Happy Traders
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-gray-900 font-display mb-2">
+                  4.9★
+                </div>
+                <div className="text-gray-600 font-body">
+                  Average Rating
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-gray-900 font-display mb-2">
+                  95%
+                </div>
+                <div className="text-gray-600 font-body">
+                  Success Rate
+                </div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold font-display text-gray-900 mb-2">5,000+</div>
-              <div className="text-gray-700 font-body font-medium">Students Educated</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold font-display text-gray-900 mb-2">95%</div>
-              <div className="text-gray-700 font-body font-medium">Satisfaction Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold font-display text-gray-900 mb-2">4.8★</div>
-              <div className="text-gray-700 font-body font-medium">Learning Rating</div>
-            </div>
-          </div>
-          
-          <div className="mt-8">
-            <button className="bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-semibold font-display px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 btn-hover-glow">
-              Join Our Learning Community
-            </button>
           </div>
         </motion.div>
       </div>

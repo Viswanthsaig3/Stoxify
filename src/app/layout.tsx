@@ -1,11 +1,24 @@
 import type { Metadata } from 'next'
-import { Inter, Orbitron, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron', weight: ['400', '500', '600', '700', '800', '900'] })
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', weight: ['300', '400', '500', '600', '700'] })
-const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains', weight: ['300', '400', '500', '600', '700', '800'] })
+const inter = Inter({ 
+  subsets: ['latin'], 
+  variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700', '800']
+})
+
+const plusJakarta = Plus_Jakarta_Sans({ 
+  subsets: ['latin'], 
+  variable: '--font-plus-jakarta',
+  weight: ['300', '400', '500', '600', '700', '800']
+})
+
+const jetbrains = JetBrains_Mono({ 
+  subsets: ['latin'], 
+  variable: '--font-jetbrains', 
+  weight: ['300', '400', '500', '600', '700', '800'] 
+})
 
 export const metadata: Metadata = {
   title: 'Stoxify - India\'s Largest Trading Community',
@@ -66,7 +79,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${orbitron.variable} ${spaceGrotesk.variable} ${jetbrains.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${plusJakarta.variable} ${jetbrains.variable} font-sans antialiased bg-black-300`}>
         {children}
       </body>
     </html>
