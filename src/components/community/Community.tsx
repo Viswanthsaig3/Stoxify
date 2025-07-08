@@ -60,7 +60,7 @@ const communityStats = [
 
 export default function Community() {
   return (
-    <section id="community" className="relative py-16 bg-white overflow-hidden">
+    <section id="community" className="relative py-12 sm:py-16 md:py-20 bg-white overflow-hidden">
       {/* Trading Background Image */}
       <div className="absolute inset-0">
         <Image 
@@ -81,7 +81,7 @@ export default function Community() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
           {/* Section Badge */}
           <motion.div
@@ -89,14 +89,14 @@ export default function Community() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-6 py-3 mb-6"
+            className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-2 mb-6"
           >
             <Users className="w-4 h-4 text-blue-600" />
             <span className="text-blue-700 font-medium text-sm">Trading Community</span>
           </motion.div>
 
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-4 leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-gray-900 mb-3 sm:mb-4 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -109,7 +109,7 @@ export default function Community() {
           </motion.h2>
           
           <motion.p 
-            className="text-lg text-gray-600 max-w-2xl mx-auto font-body leading-relaxed mb-8"
+            className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-body leading-relaxed mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -124,7 +124,7 @@ export default function Community() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto mb-6 sm:mb-8"
           >
             {communityStats.map((stat, index) => (
               <motion.div
@@ -136,10 +136,10 @@ export default function Community() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="text-center group cursor-pointer"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
-                  <stat.icon className="w-7 h-7 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
+                  <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="text-2xl font-bold font-display text-gray-900 mb-1 group-hover:text-blue-700 transition-colors duration-300">
+                <div className="text-sm sm:text-lg font-bold font-display text-gray-900 mb-1 group-hover:text-blue-700 transition-colors duration-300">
                   {stat.label === "Community Rating" ? (
                     <AnimatedCounter 
                       end={stat.value} 
@@ -167,7 +167,7 @@ export default function Community() {
                     />
                   )}
                 </div>
-                <div className="text-sm text-gray-600 font-body">
+                <div className="text-xs text-gray-600 font-body">
                   {stat.label}
                 </div>
               </motion.div>
@@ -176,56 +176,61 @@ export default function Community() {
         </motion.div>
 
         {/* Community Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {communityFeatures.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative"
-            >
-              <Card className="h-full p-6 bg-white border border-gray-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-blue-100 relative overflow-hidden">
-                
-                {/* Background Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-blue-50/0 to-blue-100/0 group-hover:from-blue-50/40 group-hover:via-blue-50/20 group-hover:to-blue-100/40 transition-all duration-500 rounded-lg"></div>
-                
-                <div className="relative z-10 flex flex-col items-center text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16 max-w-6xl mx-auto">
+          {communityFeatures.map((feature, index) => {
+            const isLastCard = index === communityFeatures.length - 1;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className={`group relative ${
+                  isLastCard ? 'sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none' : ''
+                }`}
+              >
+                <Card className="h-full p-4 sm:p-6 bg-white border border-gray-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-blue-100 relative overflow-hidden">
                   
-                  {/* Icon with enhanced animation */}
-                  <motion.div 
-                    className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
-                    whileHover={{ scale: 1.15, rotate: 6 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <feature.icon className={`w-7 h-7 ${feature.color} group-hover:scale-110 transition-transform duration-300`} />
-                  </motion.div>
+                  {/* Background Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-blue-50/0 to-blue-100/0 group-hover:from-blue-50/40 group-hover:via-blue-50/20 group-hover:to-blue-100/40 transition-all duration-500 rounded-lg"></div>
                   
-                  {/* Title */}
-                  <h3 className="text-xl font-bold font-display text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-gray-600 font-body leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-300 text-sm">
-                    {feature.description}
-                  </p>
+                  <div className="relative z-10 flex flex-col items-center text-center">
+                    
+                    {/* Icon with enhanced animation */}
+                    <motion.div 
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mb-3 sm:mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                      whileHover={{ scale: 1.15, rotate: 6 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <feature.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${feature.color} group-hover:scale-110 transition-transform duration-300`} />
+                    </motion.div>
+                    
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl font-bold font-display text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-700 transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm text-gray-600 font-body leading-relaxed mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                      {feature.description}
+                    </p>
 
-                  {/* Stats */}
-                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-3 w-full group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
-                    <div className="text-xl font-bold text-blue-700 mb-1">
-                      {feature.stat}
-                    </div>
-                    <div className="text-xs text-blue-600">
-                      {feature.statLabel}
+                    {/* Stats */}
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-2 sm:p-3 w-full group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
+                      <div className="text-sm sm:text-lg font-bold text-blue-700 mb-1">
+                        {feature.stat}
+                      </div>
+                      <div className="text-xs text-blue-600">
+                        {feature.statLabel}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
 
 
@@ -238,18 +243,18 @@ export default function Community() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-3xl p-8 max-w-3xl mx-auto relative overflow-hidden">
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto relative overflow-hidden">
             
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold font-display text-gray-900 mb-3">
+              <h3 className="text-xl sm:text-2xl font-bold font-display text-gray-900 mb-3">
                 Ready to Connect with Elite Traders?
               </h3>
-              <p className="text-gray-700 font-body mb-6 max-w-xl mx-auto leading-relaxed">
+              <p className="text-gray-700 font-body mb-6 max-w-xl mx-auto leading-relaxed text-sm sm:text-base">
                 Join thousands of successful traders in our premium community
               </p>
               
               <motion.button 
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl group"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl group text-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

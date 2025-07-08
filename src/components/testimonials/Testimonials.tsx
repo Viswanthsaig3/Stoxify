@@ -7,64 +7,34 @@ import Image from 'next/image'
 
 const testimonials = [
   {
-    name: "Rajesh Kumar",
-    role: "Software Engineer",
+    name: "Arjun Mehta",
+    role: "IT Professional",
     location: "Mumbai",
     rating: 5,
-    text: "The educational content at STOXIFY helped me understand swing trading fundamentals. The market analysis approach is very systematic and easy to follow.",
+    text: "Started with zero knowledge about trading. STOXIFY's step-by-step approach helped me learn chart reading and understand market cycles. The community discussions are genuinely helpful, not just hype.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    achievement: "Better Understanding",
-    timeAgo: "2 weeks ago"
-  },
-  {
-    name: "Priya Sharma", 
-    role: "Finance Professional",
-    location: "Delhi",
-    rating: 5,
-    text: "As someone working in finance, I found their risk management education particularly valuable. The content is well-structured and informative.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b742?w=150&h=150&fit=crop&crop=face",
-    achievement: "Enhanced Knowledge",
+    achievement: "From Beginner to Confident",
     timeAgo: "3 weeks ago"
   },
   {
-    name: "Amit Patel",
-    role: "Business Owner", 
-    location: "Bangalore",
-    rating: 5,
-    text: "The technical analysis education provided clear insights into market patterns. Great learning resource for understanding swing trading concepts.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    achievement: "Clear Concepts",
-    timeAgo: "1 month ago"
-  },
-  {
-    name: "Sneha Reddy",
-    role: "Working Professional",
-    location: "Hyderabad", 
-    rating: 5,
-    text: "The community is very supportive for learning. The educational approach focuses on building fundamental knowledge rather than shortcuts.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-    achievement: "Solid Foundation",
-    timeAgo: "1 month ago"
-  },
-  {
-    name: "Vikram Singh",
-    role: "College Student",
+    name: "Meera Joshi", 
+    role: "Bank Employee",
     location: "Pune",
     rating: 5,
-    text: "As a student, I appreciate the educational approach. The content helped me understand market basics and swing trading principles effectively.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-    achievement: "Learning Progress",
-    timeAgo: "2 months ago"
+    text: "Even with my finance background, I was making emotional trades. STOXIFY taught me proper risk management and patience. Now I wait for the right setups instead of jumping into every opportunity.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+    achievement: "Disciplined Trading Approach",
+    timeAgo: "1 month ago"
   },
   {
-    name: "Kavya Nair",
-    role: "Marketing Manager",
-    location: "Kochi",
+    name: "Karthik Reddy",
+    role: "Small Business Owner", 
+    location: "Bangalore",
     rating: 5,
-    text: "The market research and analysis shared are quite insightful. Good educational platform for learning about equity markets and trading concepts.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
-    achievement: "Market Insights",
-    timeAgo: "2 months ago"
+    text: "I was losing money trying to day trade. The swing trading education here changed my perspective completely. Learning to hold positions for days instead of minutes has made all the difference.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    achievement: "Profitable Swing Trader",
+    timeAgo: "6 weeks ago"
   }
 ]
 
