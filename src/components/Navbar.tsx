@@ -50,15 +50,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
-            <div className="relative group">
+            <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-green-600 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
-                <Image
-                  src="/images/StoxifyLogo.PNG"
-                  alt="Stoxify Logo"
-                  width={40}
-                  height={40}
-                  className="rounded-lg"
-                />
+              <Image
+                src="/images/StoxifyLogo.PNG"
+                alt="Stoxify Logo"
+                width={40}
+                height={40}
+                className="rounded-lg relative"
+              />
             </div>
             <div className="flex flex-col">
               <h1 className="text-xl font-bold font-display tracking-wider">
