@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, Users, Shield, AlertTriangle, GraduationCap, TrendingUp } from 'lucide-react'
+import { BookOpen, Users, Shield, AlertTriangle } from 'lucide-react'
 
 export default function About() {
   return (

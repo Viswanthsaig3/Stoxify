@@ -25,20 +25,6 @@ export default function Navbar() {
     { name: 'Testimonials', icon: MessageCircle, href: '#testimonials' }
   ]
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    const targetId = href.replace('#', '')
-    const targetElement = document.getElementById(targetId)
-    
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
-    }
-    
-    setIsMobileMenuOpen(false)
-  }
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
