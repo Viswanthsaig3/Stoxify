@@ -1,18 +1,19 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { TrendingUp, BarChart3, Shield, ArrowRight, Play, Star } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
+import { TrendingUp, BarChart3, Shield } from 'lucide-react'
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900 overflow-hidden">
       {/* Trading Background */}
       <div className="absolute inset-0">
-        <img 
+        <Image
           src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=800&fit=crop&crop=center" 
           alt="Trading floor background"
+          fill
           className="w-full h-full object-cover opacity-5 blur-sm"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />

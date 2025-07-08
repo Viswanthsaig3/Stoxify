@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { BarChart3, TrendingUp, Shield, Users, Target, Zap } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
+import Image from 'next/image'
 
 const features = [
   {
@@ -80,9 +81,10 @@ export default function Features() {
     <section className="relative py-24 bg-white overflow-hidden">
       {/* Trading Background Image */}
       <div className="absolute inset-0">
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=600&fit=crop&crop=center" 
           alt="Financial data background"
+          fill
           className="w-full h-full object-cover opacity-5"
         />
       </div>

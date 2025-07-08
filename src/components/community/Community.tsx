@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Users, MessageCircle, TrendingUp, Award, Shield, ArrowRight, Star } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import AnimatedCounter from '@/components/ui/AnimatedCounter'
+import Image from 'next/image'
 
 const communityFeatures = [
   {
@@ -62,9 +63,10 @@ export default function Community() {
     <section id="community" className="relative py-16 bg-white overflow-hidden">
       {/* Trading Background Image */}
       <div className="absolute inset-0">
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=600&fit=crop&crop=center" 
           alt="Financial data background"
+          fill
           className="w-full h-full object-cover opacity-5"
         />
       </div>

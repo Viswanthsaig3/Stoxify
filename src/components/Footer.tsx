@@ -18,6 +18,7 @@ import {
   Users,
   Zap
 } from 'lucide-react'
+import Image from 'next/image'
 
 const footerSections = [
   {
@@ -77,9 +78,10 @@ export default function Footer() {
     <footer className="relative bg-gradient-to-br from-black via-midnightblue-950 to-black overflow-hidden">
       {/* Trading Background */}
       <div className="absolute inset-0">
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=600&fit=crop&crop=center" 
           alt="Financial data background"
+          fill
           className="w-full h-full object-cover opacity-5 blur-sm"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-midnightblue-950/95 to-black/95" />

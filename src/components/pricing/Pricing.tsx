@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Check, Star, Crown, Zap, ArrowRight, TrendingUp, Shield, Users } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import Image from 'next/image'
 
 const pricingPlans = [
   {
@@ -71,15 +72,15 @@ const features = [
 
 export default function Pricing() {
   return (
-    <section className="relative py-24 bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900 overflow-hidden">
-      {/* Trading Background */}
+    <section id="pricing" className="relative py-24 bg-white overflow-hidden">
+      {/* Trading Background Image */}
       <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=800&fit=crop&crop=center" 
-          alt="Trading background"
-          className="w-full h-full object-cover opacity-5 blur-sm"
+        <Image 
+          src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=800&fit=crop&crop=center" 
+          alt="Financial data background"
+          fill
+          className="w-full h-full object-cover opacity-5"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
       </div>
 
       {/* Floating Elements */}

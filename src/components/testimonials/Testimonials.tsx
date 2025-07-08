@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Star, Quote, TrendingUp, Award, Users, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 const testimonials = [
   {
@@ -70,12 +71,13 @@ const stats = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
-      {/* Background Image */}
+    <section id="testimonials" className="relative py-24 bg-white overflow-hidden">
+      {/* Trading Background */}
       <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop&crop=center" 
-          alt="Success background"
+        <Image 
+          src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=800&fit=crop&crop=center" 
+          alt="Financial data background"
+          fill
           className="w-full h-full object-cover opacity-5"
         />
       </div>
@@ -263,20 +265,14 @@ export default function Testimonials() {
 
                   {/* User Info */}
                   <div className="flex items-center gap-4">
-                    <motion.div 
-                      className="relative"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-14 h-14 rounded-full object-cover border-2 border-blue-100 group-hover:border-blue-200 transition-colors duration-300"
+                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg flex-shrink-0">
+                      <Image
+                        src={testimonial.image}
+                        alt={`Testimonial from ${testimonial.name}`}
+                        fill
+                        className="object-cover"
                       />
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded-full"></div>
-                      </div>
-                    </motion.div>
+                    </div>
                     
                     <div className="flex-1">
                       <h4 className="font-bold text-gray-900 font-display group-hover:text-blue-700 transition-colors duration-300">

@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { TrendingUp, Users, Shield, Award, CheckCircle, Star, ArrowRight } from 'lucide-react'
+import { TrendingUp, Users, Shield, Award, CheckCircle, ArrowRight, BarChart3 } from 'lucide-react'
+import Image from 'next/image'
 
 const aboutStats = [
   {
@@ -47,9 +48,10 @@ export default function About() {
     <section id="about" className="relative py-24 bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900 overflow-hidden">
       {/* Trading Background */}
       <div className="absolute inset-0">
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=800&fit=crop&crop=center" 
           alt="Trading floor background"
+          fill
           className="w-full h-full object-cover opacity-5 blur-sm"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
@@ -85,7 +87,7 @@ export default function About() {
           }}
           className="absolute bottom-24 left-12 w-16 h-16 bg-blue-600/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-blue-500/20"
         >
-          <Star className="w-8 h-8 text-blue-500" />
+          <BarChart3 className="w-8 h-8 text-blue-500" />
         </motion.div>
       </div>
 
@@ -242,17 +244,19 @@ export default function About() {
             className="relative"
           >
             {/* Trading Chart Image */}
-            <motion.div 
-              className="relative h-80 rounded-2xl overflow-hidden mb-8 group"
-              whileHover={{ scale: 1.02 }}
+            <motion.div
+              className="relative"
+              whileHover={{ scale: 1.02, zIndex: 10 }}
               transition={{ duration: 0.3 }}
             >
-              <img 
-                src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&h=400&fit=crop&crop=center" 
-                alt="Trading analytics"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+              <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/10">
+                <Image 
+                  src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop" 
+                  alt="About Stoxify"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
               
               {/* Floating Stats on Image */}
               <motion.div
