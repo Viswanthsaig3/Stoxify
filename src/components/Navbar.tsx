@@ -51,7 +51,7 @@ export default function Navbar() {
   const hoverIconClass = isOnLightSection ? 'group-hover:text-blue-600' : 'group-hover:text-blue-400'
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
       isScrolled 
         ? isOnLightSection
           ? 'bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-lg shadow-gray-500/5'

@@ -33,7 +33,7 @@ export default function Home() {
         </section>
         
         {/* Pricing Section - Premium Blue Gradient */}
-        <section className="bg-gradient-to-br from-slateblue-100 via-royalblue-700 to-mediumslateblue-300">
+        <section className="bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900">
           <Pricing />
         </section>
         
