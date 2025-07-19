@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { TrendingUp, BarChart3, Shield, Users } from 'lucide-react'
+import { TrendingUp, BarChart3 } from 'lucide-react'
 
 export default function Hero() {
   return (
