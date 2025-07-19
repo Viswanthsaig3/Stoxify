@@ -97,101 +97,55 @@ export default function Features() {
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          {/* Section Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-2 mb-6"
-          >
-            <TrendingUp className="w-4 h-4 text-blue-600" />
-            <span className="text-blue-700 font-medium text-sm">Learning Features</span>
-          </motion.div>
-
+          {/* Hero-style Title */}
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-gray-900 mb-3 sm:mb-4 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-display leading-tight mb-3 md:mb-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Educational{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent">
-              Features
+            <span className="text-gray-900 font-extrabold tracking-tight">
+              Trade Like
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight">
+              The Institutions
             </span>
           </motion.h2>
+          
           <motion.p 
-            className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-body leading-relaxed px-4"
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed px-4 mb-8 sm:mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Comprehensive learning resources designed to enhance your understanding of swing trading and market analysis.
+            Get ready to level up your trading game.
           </motion.p>
+
+          {/* Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            viewport={{ once: true }}
+            className="mb-12 sm:mb-16 max-w-5xl mx-auto"
+          >
+            <Image 
+              src="/images/Trade-like institutions.png" 
+              alt="Trade Like Institutions"
+              width={1200}
+              height={600}
+              className="w-full h-auto object-contain"
+              priority
+              quality={100}
+              unoptimized
+            />
+          </motion.div>
         </motion.div>
 
-        <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {features.map((feature, index) => {
-            const isLastCard = index === features.length - 1;
-            return (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className={`group relative ${
-                  isLastCard ? 'sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none' : ''
-                }`}
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Card className="h-full p-4 sm:p-6 bg-white border border-gray-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-blue-100 relative overflow-hidden">
-                  
-                  {/* Background Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-blue-50/0 to-blue-100/0 group-hover:from-blue-50/50 group-hover:via-blue-50/30 group-hover:to-blue-100/50 transition-all duration-500 rounded-lg"></div>
-                  
-                  <div className="relative z-10 flex flex-col items-center text-center">
-                    
-                    {/* Icon with enhanced animation */}
-                    <motion.div 
-                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${feature.bgGradient} flex items-center justify-center mb-3 sm:mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}
-                      whileHover={{ scale: 1.15, rotate: 6 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <feature.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${feature.color} group-hover:scale-110 transition-transform duration-300`} />
-                    </motion.div>
-                    
-                    {/* Title */}
-                    <h3 className="text-lg sm:text-xl font-bold font-display text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-700 transition-colors duration-300">
-                      {feature.title}
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className="text-xs sm:text-sm text-gray-600 font-body leading-relaxed mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
-                      {feature.description}
-                    </p>
 
-                    {/* Stats */}
-                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-2 sm:p-3 w-full group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
-                      <div className="text-sm sm:text-lg font-bold text-blue-700 mb-1">
-                        {feature.stat}
-                      </div>
-                      <div className="text-xs text-blue-600">
-                        {feature.statLabel}
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            );
-          })}
-        </motion.div>
       </div>
     </section>
   )
