@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/hero/Hero'
+import NewsTicker from '@/components/ui/NewsTicker'
 import Features from '@/components/features/Features'
 import About from '@/components/about/About'
 import Community from '@/components/community/Community'
@@ -16,6 +17,9 @@ export default function Home() {
         <section className="bg-premium-gradient">
           <Hero />
         </section>
+        
+        {/* News Ticker Section */}
+        <NewsTicker />
         
         {/* Features Section - Clean White with Blue Accents */}
         <section className="bg-white-100">
