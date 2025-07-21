@@ -2,17 +2,42 @@
 
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Menu, X, ArrowRight, TrendingUp } from 'lucide-react'
+import { Menu, X, ArrowRight, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { CONTACT_INFO } from '@/lib/constants'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isOverLightSection, setIsOverLightSection] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
       setIsScrolled(scrollY > 50)
+      
+      // Check if navbar is over light sections
+      const communitySection = document.getElementById('community')
+      const pricingSection = document.getElementById('pricing')
+      const contactSection = document.getElementById('contact')
+      
+      let overLight = false
+      
+      // Check each light section
+      const sections = [communitySection, pricingSection, contactSection]
+      sections.forEach(section => {
+        if (section) {
+          const rect = section.getBoundingClientRect()
+          const navbarHeight = 64 // navbar height
+          
+          // Check if navbar overlaps with this section
+          if (rect.top <= navbarHeight && rect.bottom >= 0) {
+            overLight = true
+          }
+        }
+      })
+      
+      setIsOverLightSection(overLight)
     }
     
     window.addEventListener('scroll', handleScroll)
@@ -20,13 +45,9 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Features', href: '#features' },
     { name: 'About', href: '#about' },
     { name: 'Community', href: '#community' },
-    { name: 'Testimonials', href: '#testimonials' },
     { name: 'Pricing', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' }
   ]
 
@@ -34,7 +55,9 @@ export default function Navbar() {
     <motion.nav 
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
         isScrolled 
-          ? 'bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20'
+          ? isOverLightSection
+            ? 'bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-lg shadow-gray-200/20'
+            : 'bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20'
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -68,7 +91,9 @@ export default function Navbar() {
                   STOXIFY
                 </span>
               </h1>
-              <div className="flex items-center space-x-1 text-xs font-medium text-gray-400 leading-none">
+              <div className={`flex items-center space-x-1 text-xs font-medium leading-none ${
+                isScrolled && isOverLightSection ? 'text-gray-600' : 'text-gray-400'
+              }`}>
                 <span className="text-blue-500">STOCKS</span>
                 <span>•</span>
                 <span className="text-blue-500">CRYPTO</span>
@@ -84,7 +109,11 @@ export default function Navbar() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="group relative px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white transition-all duration-300 hover:bg-white/10"
+                className={`group relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  isScrolled && isOverLightSection
+                    ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50'
+                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -100,14 +129,15 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <motion.button 
-              className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl group
+              className="relative overflow-hidden bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl group
               before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out"
+              onClick={() => window.open(CONTACT_INFO.whatsapp.url, '_blank')}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10 flex items-center space-x-2">
-                <TrendingUp className="w-4 h-4" />
-                <span>Get Started</span>
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp Us</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </motion.button>
@@ -117,7 +147,11 @@ export default function Navbar() {
           <div className="lg:hidden">
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative p-2 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur transition-all duration-300"
+              className={`relative p-2 rounded-lg backdrop-blur transition-all duration-300 ${
+                isScrolled && isOverLightSection
+                  ? 'bg-gray-200/50 hover:bg-gray-200/70'
+                  : 'bg-white/10 hover:bg-white/20'
+              }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -130,7 +164,9 @@ export default function Navbar() {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <X className="w-5 h-5 text-white" />
+                    <X className={`w-5 h-5 ${
+                      isScrolled && isOverLightSection ? 'text-gray-700' : 'text-white'
+                    }`} />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -140,7 +176,9 @@ export default function Navbar() {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Menu className="w-5 h-5 text-white" />
+                    <Menu className={`w-5 h-5 ${
+                      isScrolled && isOverLightSection ? 'text-gray-700' : 'text-white'
+                    }`} />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -159,12 +197,20 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="px-4 pt-4 pb-6 space-y-2 bg-black/95 backdrop-blur-xl border-t border-white/10">
+            <div className={`px-4 pt-4 pb-6 space-y-2 backdrop-blur-xl transition-all duration-500 ${
+              isOverLightSection
+                ? 'bg-white/95 border-t border-gray-200/50'
+                : 'bg-black/95 border-t border-white/10'
+            }`}>
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    isOverLightSection
+                      ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -178,16 +224,19 @@ export default function Navbar() {
               
               <div className="pt-4 px-4">
                 <motion.button 
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                    window.open(CONTACT_INFO.whatsapp.url, '_blank')
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.4 }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <TrendingUp className="w-4 h-4" />
-                  <span>Get Started</span>
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp Us</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </motion.button>
               </div>

@@ -149,11 +149,26 @@ export default function Community() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 100,
+                damping: 12
+              }}
               viewport={{ once: true }}
-              whileHover={{ y: -12, scale: 1.03 }}
+              whileHover={{ 
+                y: -15, 
+                scale: 1.05,
+                rotateY: 5,
+                transition: {
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20
+                }
+              }}
               className="group relative"
             >
               {/* Card with enhanced styling */}

@@ -75,15 +75,26 @@ export default function FAQ() {
           </motion.h2>
         </motion.div>
 
-        {/* FAQ Items */}
+        {/* Enhanced FAQ Items */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
               viewport={{ once: true }}
+              whileHover={{ 
+                scale: 1.02,
+                y: -5,
+                transition: { type: "spring", stiffness: 300, damping: 20 }
+              }}
               className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden"
             >
               <motion.button

@@ -163,6 +163,16 @@ export const SOCIAL_LINKS = [
   }
 ]
 
+export const CONTACT_INFO = {
+  whatsapp: {
+    number: "7011957726",
+    message: "Hello, I just visited your website, I have some queries. Please connect me with the support team",
+    url: "https://wa.me/917011957726?text=Hello%2C%20I%20just%20visited%20your%20website%2C%20I%20have%20some%20queries.%20Please%20connect%20me%20with%20the%20support%20team"
+  },
+  phone: "7011957726",
+  email: "support@stoxify.com"
+}
+
 export const FOOTER_LINKS = [
   {
     title: "Company",

@@ -2,34 +2,38 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
+import { CONTACT_INFO } from '@/lib/constants'
 
 export default function Contact() {
 
   const contactInfo = [
     {
-      icon: Mail,
-      title: "Email Us",
-      details: "support@stoxify.com",
-      description: "Send us an email anytime"
+      icon: MessageCircle,
+      title: "WhatsApp Us",
+      details: `+91 ${CONTACT_INFO.whatsapp.number}`,
+      description: "Quick support via WhatsApp",
+      action: () => window.open(CONTACT_INFO.whatsapp.url, '_blank')
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: "+91 98765 43210",
-      description: "Mon-Fri from 9am to 6pm"
+      details: `+91 ${CONTACT_INFO.phone}`,
+      description: "Mon-Fri from 9am to 6pm",
+      action: () => window.open(`tel:+91${CONTACT_INFO.phone}`, '_self')
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      details: CONTACT_INFO.email,
+      description: "Send us an email anytime",
+      action: () => window.open(`mailto:${CONTACT_INFO.email}`, '_self')
     },
     {
       icon: MapPin,
       title: "Visit Us",
       details: "Mumbai, Maharashtra",
       description: "India"
-    },
-    {
-      icon: Clock,
-      title: "Response Time",
-      details: "Within 24 hours",
-      description: "We'll get back to you soon"
     }
   ]
 
@@ -85,19 +89,37 @@ export default function Contact() {
           </motion.p>
         </motion.div>
 
-        {/* Contact Information Grid */}
+        {/* Enhanced Contact Information Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {contactInfo.map((info, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50, scale: 0.9, rotateY: -15 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
               viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.03 }}
+              whileHover={{ 
+                y: -12, 
+                scale: 1.05,
+                rotateY: 5,
+                transition: { 
+                  type: "spring", 
+                  stiffness: 300, 
+                  damping: 20 
+                }
+              }}
               className="group relative"
             >
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 group-hover:border-white/40 h-full overflow-hidden">
+              <div 
+                className={`relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 group-hover:border-white/40 h-full overflow-hidden ${info.action ? 'cursor-pointer' : ''}`}
+                onClick={info.action}
+              >
                 
                 {/* Professional overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-blue-50/0 group-hover:from-blue-50/20 group-hover:to-blue-50/30 transition-all duration-500 rounded-2xl"></div>
