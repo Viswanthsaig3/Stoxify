@@ -16,9 +16,9 @@ const navigationLinks = [
 ]
 
 const legalLinks = [
-  { name: "Privacy Policy", href: "#", icon: Shield },
+  { name: "Privacy Policy", href: "/privacy", icon: Shield },
   { name: "Terms of Service", href: "#", icon: FileText },
-  { name: "Disclaimer", href: "#", icon: HelpCircle },
+  { name: "Disclaimer", href: "/disclaimer", icon: HelpCircle },
   { name: "Risk Warning", href: "#", icon: ExternalLink }
 ]
 
