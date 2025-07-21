@@ -4,6 +4,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Star, Quote } from 'lucide-react'
 import Image from 'next/image'
+import { 
+  entranceAnimations, 
+  hoverAnimations, 
+  tapAnimations
+} from '@/lib/animations'
 
 const testimonials = [
   {
@@ -21,7 +26,7 @@ const testimonials = [
     location: "Pune",
     rating: 5,
     text: "Even with my finance background, I was making emotional trades. STOXIFY taught me proper risk management and patience. My portfolio is finally growing steadily.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b9e0e4b0?w=150&h=150&fit=crop&crop=face",
     achievement: "Disciplined Trader"
   },
   {
@@ -39,7 +44,7 @@ const testimonials = [
     location: "Delhi",
     rating: 5,
     text: "The community support and educational content helped me build confidence in my trading decisions. I've learned to trust my analysis and stick to my strategy.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b9e0e4b0?w=150&h=150&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     achievement: "Confident Trader"
   },
   {
@@ -102,7 +107,7 @@ const testimonials = [
     location: "Indore",
     rating: 5,
     text: "The community discussions and live sessions helped me understand market psychology. I no longer panic during market volatility and stick to my trading plan.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=150&h=150&fit=crop&crop=face",
     achievement: "Calm Trader"
   },
   {
@@ -120,7 +125,7 @@ const testimonials = [
     location: "Coimbatore",
     rating: 5,
     text: "At 58, I thought it was too late to learn trading. STOXIFY proved me wrong. The patient guidance helped me build a retirement income through smart investing.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=face",
     achievement: "Never Too Late"
   },
   {
@@ -129,7 +134,7 @@ const testimonials = [
     location: "Chandigarh",
     rating: 5,
     text: "As a stay-at-home mom, I wanted to contribute financially. STOXIFY taught me to trade during school hours. I now earn more than my previous job.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
     achievement: "Financial Freedom"
   },
   {
@@ -138,7 +143,7 @@ const testimonials = [
     location: "Ludhiana",
     rating: 5,
     text: "Coming from traditional business, stock market seemed risky. STOXIFY's systematic approach showed me how to trade with calculated risks and consistent profits.",
-    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=150&h=150&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
     achievement: "Calculated Risks"
   }
 ]
@@ -147,20 +152,36 @@ const testimonials = [
 const firstRowTestimonials = [...testimonials, ...testimonials]
 const secondRowTestimonials = [...testimonials.slice().reverse(), ...testimonials.slice().reverse()]
 
-// Testimonial Card Component - Better Layout with No Line Breaks
-const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-  <div className="flex-shrink-0 w-[420px] mx-3">
-    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 hover:border-white/30 transition-all duration-300 h-36">
-      <div className="flex gap-4 h-full">
+// Premium Testimonial Card Component with unified animations
+const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => {
+  return (
+    <div className="flex-shrink-0 w-[420px] mx-3">
+      <motion.div 
+        className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 h-36"
+        whileHover={{
+          ...hoverAnimations.cardHover,
+          borderColor: "rgba(255, 255, 255, 0.4)"
+        }}
+        whileTap={tapAnimations.gentle}
+      >
+        <div className="flex gap-4 h-full">
         {/* Left Side - User Info */}
         <div className="flex flex-col items-center justify-center flex-shrink-0 w-20">
           <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-white/20 mb-2">
-            <Image
-              src={testimonial.image}
-              alt={`Testimonial from ${testimonial.name}`}
-              fill
-              className="object-cover"
-            />
+            {testimonial.image ? (
+              <Image
+                src={testimonial.image}
+                alt={`Testimonial from ${testimonial.name}`}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                <span className="text-white font-bold text-lg">
+                  {testimonial.name.charAt(0)}
+                </span>
+              </div>
+            )}
           </div>
           <div className="flex items-center gap-0.5">
             {[...Array(testimonial.rating)].map((_, starIndex) => (
@@ -200,10 +221,11 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </motion.div>
     </div>
-  </div>
-)
+  )
+}
 
 export default function Testimonials() {
   return (
@@ -223,19 +245,16 @@ export default function Testimonials() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
+        {/* Premium Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          {...entranceAnimations.fadeInScale}
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-display leading-tight mb-3 md:mb-4"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
+            {...entranceAnimations.heroTitle}
+            transition={{ ...entranceAnimations.heroTitle.transition, delay: 0.2 }}
             viewport={{ once: true }}
           >
             <span className="text-white font-extrabold tracking-tight">
@@ -264,7 +283,7 @@ export default function Testimonials() {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30,
+                duration: 60,
                 ease: "linear",
               },
             }}
@@ -302,7 +321,7 @@ export default function Testimonials() {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 35,
+                duration: 70,
                 ease: "linear",
               },
             }}

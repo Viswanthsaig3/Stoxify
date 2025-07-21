@@ -3,6 +3,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { TrendingUp, Target, Video, ClipboardList, Search, Zap, MessageCircle, BarChart3, Brain, Users } from 'lucide-react'
+import { 
+  entranceAnimations, 
+  hoverAnimations, 
+  tapAnimations, 
+  containerAnimations 
+} from '@/lib/animations'
 
 const features = [
   {
@@ -111,18 +117,15 @@ export default function Community() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Consistent Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          {...entranceAnimations.fadeInScale}
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
           {/* Hero-style Title */}
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-display leading-tight mb-3 md:mb-4"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
+            {...entranceAnimations.heroTitle}
+            transition={{ ...entranceAnimations.heroTitle.transition, delay: 0.2 }}
             viewport={{ once: true }}
           >
             <span className="text-gray-900 font-extrabold tracking-tight">
@@ -144,30 +147,22 @@ export default function Community() {
           </motion.p>
         </motion.div>
 
-        {/* Compact square cards with larger gaps - 4 column layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        {/* Premium card grid with unified animations */}
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto"
+          {...containerAnimations.cardContainer}
+        >
           {features.slice(0, 12).map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              {...entranceAnimations.scaleIn}
               transition={{ 
-                duration: 0.4, 
-                delay: index * 0.05,
-                type: "spring",
-                stiffness: 150,
-                damping: 20
+                ...entranceAnimations.scaleIn.transition,
+                delay: index * 0.1
               }}
               viewport={{ once: true }}
-              whileHover={{ 
-                y: -3, 
-                scale: 1.01,
-                transition: {
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 25
-                }
-              }}
+              whileHover={hoverAnimations.cardHover}
+              whileTap={tapAnimations.gentle}
               className="group relative"
             >
               {/* Mini square cards with extreme rounded corners */}
@@ -192,7 +187,7 @@ export default function Community() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
 
       </div>

@@ -25,8 +25,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Local .env file
-.env.local
+# Local .env files
+.env*.local
+.env
+.env.production
 
 # Editor directories and files
 .vscode
@@ -39,3 +41,16 @@ pnpm-debug.log*
 
 # Turborepo
 .turbo
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

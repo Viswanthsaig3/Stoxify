@@ -7,14 +7,11 @@ import Image from 'next/image'
 export default function Features() {
   return (
     <section className="relative py-12 sm:py-16 md:py-20 bg-white overflow-hidden">
-      {/* Trading Background Image - Hidden on mobile */}
-      <div className="absolute inset-0 hidden md:block">
-        <Image 
-          src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=600&fit=crop&crop=center" 
-          alt="Financial data background"
-          fill
-          className="w-full h-full object-cover opacity-5"
-        />
+      {/* Gradient Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -79,6 +79,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preload" href="/images/StoxifyLogo.PNG" as="image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
+      </head>
       <body className={`${inter.variable} ${plusJakarta.variable} ${jetbrains.variable} font-sans antialiased bg-black-300`}>
         {children}
       </body>

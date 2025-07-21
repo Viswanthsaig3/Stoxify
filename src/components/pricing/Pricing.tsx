@@ -3,6 +3,12 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Check, TrendingUp, Bitcoin, DollarSign, Crown, Sparkles } from 'lucide-react'
+import { 
+  entranceAnimations, 
+  hoverAnimations, 
+  tapAnimations, 
+  containerAnimations 
+} from '@/lib/animations'
 
 const pricingData = {
   stocks: {
@@ -126,9 +132,7 @@ export default function Pricing() {
         
         {/* Compact Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          {...entranceAnimations.fadeInScale}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
@@ -176,16 +180,19 @@ export default function Pricing() {
           </div>
         </motion.div>
 
-        {/* Compact Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {/* Premium Pricing Cards */}
+        <motion.div 
+          className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+          {...containerAnimations.cardContainer}
+        >
           
           {/* Quarterly Plan */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            {...entranceAnimations.slideInLeft}
+            transition={{ ...entranceAnimations.slideInLeft.transition, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 relative hover:shadow-xl transition-shadow duration-300"
+            whileHover={hoverAnimations.cardHover}
+            className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 relative transition-all duration-300"
           >
             <div className="text-center mb-6">
               <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-3 py-1 mb-3">
@@ -222,18 +229,22 @@ export default function Pricing() {
               </div>
             </div>
 
-            <button className="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 rounded-xl transition-colors duration-200">
+            <motion.button 
+              className="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 rounded-xl transition-colors duration-200"
+              whileHover={hoverAnimations.buttonHover}
+              whileTap={tapAnimations.gentle}
+            >
               Get Started
-            </button>
+            </motion.button>
           </motion.div>
 
           {/* Yearly Plan */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            {...entranceAnimations.slideInRight}
+            transition={{ ...entranceAnimations.slideInRight.transition, delay: 0.4 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl p-6 shadow-xl border-2 border-blue-200 relative hover:shadow-2xl transition-shadow duration-300"
+            whileHover={hoverAnimations.cardHover}
+            className="bg-white rounded-2xl p-6 shadow-xl border-2 border-blue-200 relative transition-all duration-300"
           >
             {/* Popular Badge */}
             {currentData.yearly.popular && (
@@ -280,11 +291,15 @@ export default function Pricing() {
               </div>
             </div>
 
-            <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg">
+            <motion.button 
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg"
+              whileHover={hoverAnimations.buttonHover}
+              whileTap={tapAnimations.gentle}
+            >
               Get Started
-            </button>
+            </motion.button>
           </motion.div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

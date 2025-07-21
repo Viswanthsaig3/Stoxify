@@ -1,14 +1,42 @@
+import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/hero/Hero'
 import NewsTicker from '@/components/ui/NewsTicker'
-import Features from '@/components/features/Features'
-import About from '@/components/about/About'
-import Community from '@/components/community/Community'
-import Pricing from '@/components/pricing/Pricing'
-import Testimonials from '@/components/testimonials/Testimonials'
-import FAQ from '@/components/faq/FAQ'
-import Contact from '@/components/contact/Contact'
-import Footer from '@/components/Footer'
+import LoadingAnimation from '@/components/ui/LoadingAnimation'
+
+// Lazy load heavy components below the fold
+const Features = dynamic(() => import('@/components/features/Features'), {
+  loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
+})
+
+const About = dynamic(() => import('@/components/about/About'), {
+  loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
+})
+
+const Community = dynamic(() => import('@/components/community/Community'), {
+  loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
+})
+
+const Pricing = dynamic(() => import('@/components/pricing/Pricing'), {
+  loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
+})
+
+const Testimonials = dynamic(() => import('@/components/testimonials/Testimonials'), {
+  loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
+})
+
+const FAQ = dynamic(() => import('@/components/faq/FAQ'), {
+  loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
+})
+
+const Contact = dynamic(() => import('@/components/contact/Contact'), {
+  loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
+})
+
+const Footer = dynamic(() => import('@/components/Footer'), {
+  loading: () => <div className="h-32 flex items-center justify-center"><LoadingAnimation /></div>
+})
 
 export default function Home() {
   return (
@@ -25,42 +53,58 @@ export default function Home() {
         
         {/* Features Section - Clean White with Blue Accents */}
         <section className="bg-white-100">
-          <Features />
+          <Suspense fallback={<div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>}>
+            <Features />
+          </Suspense>
         </section>
         
         {/* About Section - Dark Midnight Blue */}
         <section className="bg-gradient-to-br from-midnightblue-400 via-midnightblue-200 to-slateblue-300">
-          <About />
+          <Suspense fallback={<div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>}>
+            <About />
+          </Suspense>
         </section>
         
         {/* Community Section - Light Blue Background */}
         <section className="bg-gradient-to-br from-aliceblue-100 to-white-100">
-          <Community />
+          <Suspense fallback={<div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>}>
+            <Community />
+          </Suspense>
         </section>
         
         {/* Testimonials Section - Premium Blue Gradient */}
         <section className="bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900">
-          <Testimonials />
+          <Suspense fallback={<div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>}>
+            <Testimonials />
+          </Suspense>
         </section>
         
         {/* Pricing Section - Light Blue Background */}
         <section className="bg-gradient-to-br from-aliceblue-100 to-white-100">
-          <Pricing />
+          <Suspense fallback={<div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>}>
+            <Pricing />
+          </Suspense>
         </section>
         
         {/* FAQ Section - Premium Blue Gradient */}
         <section className="bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900">
-          <FAQ />
+          <Suspense fallback={<div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>}>
+            <FAQ />
+          </Suspense>
         </section>
         
         {/* Contact Section - Light Blue Background */}
         <section className="bg-gradient-to-br from-aliceblue-100 to-white-100">
-          <Contact />
+          <Suspense fallback={<div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>}>
+            <Contact />
+          </Suspense>
         </section>
         
         {/* Footer Section - Deep Midnight */}
         <section className="bg-gradient-to-br from-black-1000 via-midnightblue-500 to-midnightblue-100">
-          <Footer />
+          <Suspense fallback={<div className="h-32 flex items-center justify-center"><LoadingAnimation /></div>}>
+            <Footer />
+          </Suspense>
         </section>
       </main>
     </>

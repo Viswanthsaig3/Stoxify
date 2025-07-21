@@ -113,17 +113,13 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                {/* Profile Images */}
+                {/* Profile Images - Using placeholder avatars */}
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
-                      <Image
-                        src={`https://images.unsplash.com/photo-${1500000000000 + i}?w=40&h=40&fit=crop&crop=face`}
-                        alt={`Member ${i}`}
-                        width={40}
-                        height={40}
-                        className="w-full h-full object-cover"
-                      />
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                      <div className="text-white font-bold text-sm">
+                        {String.fromCharCode(64 + i)}
+                      </div>
                     </div>
                   ))}
                 </div>

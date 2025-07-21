@@ -68,7 +68,10 @@ export default function NewsTicker() {
             }
           })
         } catch (error) {
-          console.log('Crypto API error:', error)
+          // Silently handle crypto API error in production
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Crypto API error:', error)
+          }
         }
 
         // Fetch Forex data from Fixer.io alternative (free tier)
@@ -107,7 +110,10 @@ export default function NewsTicker() {
             })
           }
         } catch (error) {
-          console.log('Forex API error:', error)
+          // Silently handle forex API error in production
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Forex API error:', error)
+          }
         }
 
         // Add some market news
@@ -130,7 +136,10 @@ export default function NewsTicker() {
         setMarketData(data)
         setLoading(false)
       } catch (error) {
-        console.error('Error fetching market data:', error)
+        // Handle general error
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Error fetching market data:', error)
+        }
         setLoading(false)
       }
     }
