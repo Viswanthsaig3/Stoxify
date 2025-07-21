@@ -2,79 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { BarChart3, TrendingUp, Shield, Users, Target } from 'lucide-react'
-import { Card } from '@/components/ui/Card'
 import Image from 'next/image'
-
-const features = [
-  {
-    icon: BarChart3,
-    title: "Technical Analysis Education",
-    description: "Learn to read charts and identify swing trading opportunities through comprehensive technical analysis courses.",
-    color: "text-blue-600",
-    bgGradient: "from-blue-50 to-blue-100",
-    stat: "50+",
-    statLabel: "Learning Modules"
-  },
-  {
-    icon: TrendingUp,
-    title: "Market Research & Insights",
-    description: "Access detailed market analysis and research reports to understand market trends and patterns.",
-    color: "text-blue-600",
-    bgGradient: "from-blue-50 to-blue-100",
-    stat: "Daily",
-    statLabel: "Market Updates"
-  },
-  {
-    icon: Shield,
-    title: "Risk Management Education",
-    description: "Learn essential risk management principles and techniques to protect your capital while swing trading.",
-    color: "text-blue-600",
-    bgGradient: "from-blue-50 to-blue-100",
-    stat: "Essential",
-    statLabel: "Skills Taught"
-  },
-  {
-    icon: Users,
-    title: "Community Learning",
-    description: "Connect with fellow learners in our educational community focused on swing trading knowledge sharing.",
-    color: "text-blue-600",
-    bgGradient: "from-blue-50 to-blue-100",
-    stat: "Active",
-    statLabel: "Community"
-  },
-  {
-    icon: Target,
-    title: "Educational Content",
-    description: "Structured learning materials covering swing trading fundamentals, strategies, and market analysis.",
-    color: "text-blue-600",
-    bgGradient: "from-blue-50 to-blue-100",
-    stat: "Comprehensive",
-    statLabel: "Curriculum"
-  }
-]
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-}
 
 export default function Features() {
   return (
