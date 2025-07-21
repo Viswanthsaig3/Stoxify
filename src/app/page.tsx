@@ -6,6 +6,8 @@ import About from '@/components/about/About'
 import Community from '@/components/community/Community'
 import Pricing from '@/components/pricing/Pricing'
 import Testimonials from '@/components/testimonials/Testimonials'
+import FAQ from '@/components/faq/FAQ'
+import Contact from '@/components/contact/Contact'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -36,14 +38,24 @@ export default function Home() {
           <Community />
         </section>
         
-        {/* Pricing Section - Premium Blue Gradient */}
+        {/* Testimonials Section - Premium Blue Gradient */}
         <section className="bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900">
+          <Testimonials />
+        </section>
+        
+        {/* Pricing Section - Light Blue Background */}
+        <section className="bg-gradient-to-br from-aliceblue-100 to-white-100">
           <Pricing />
         </section>
         
-        {/* Testimonials Section - Clean White */}
-        <section className="bg-white-100">
-          <Testimonials />
+        {/* FAQ Section - Premium Blue Gradient */}
+        <section className="bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900">
+          <FAQ />
+        </section>
+        
+        {/* Contact Section - Light Blue Background */}
+        <section className="bg-gradient-to-br from-aliceblue-100 to-white-100">
+          <Contact />
         </section>
         
         {/* Footer Section - Deep Midnight */}

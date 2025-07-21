@@ -2,37 +2,17 @@
 
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Menu, X, Star, DollarSign, BarChart3, ArrowRight } from 'lucide-react'
+import { Menu, X, Home, Users, DollarSign, MessageCircle, HelpCircle, Mail, ArrowRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isOnLightSection, setIsOnLightSection] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
-      setIsScrolled(scrollY > 20)
-      
-      // Check which section we're on to adapt text color
-      const sections = document.querySelectorAll('section')
-      let onLightSection = false
-      
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect()
-        const sectionTop = rect.top + scrollY
-        const sectionHeight = rect.height
-        
-        if (scrollY + 100 >= sectionTop && scrollY + 100 <= sectionTop + sectionHeight) {
-          const bgColor = window.getComputedStyle(section).backgroundColor
-          // Check if section has white/light background
-          if (section.classList.contains('bg-white') || bgColor.includes('255, 255, 255')) {
-            onLightSection = true
-          }
-        }
-      })
-      
-      setIsOnLightSection(onLightSection)
+      setIsScrolled(scrollY > 50)
     }
     
     window.addEventListener('scroll', handleScroll)
@@ -40,15 +20,15 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: 'Features', icon: Star, href: '#features' },
-    { name: 'About', icon: BarChart3, href: '#about' },
-    { name: 'Pricing', icon: DollarSign, href: '#pricing' }
+    { name: 'Home', href: '#hero' },
+    { name: 'Features', href: '#features' },
+    { name: 'About', href: '#about' },
+    { name: 'Community', href: '#community' },
+    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'Contact', href: '#contact' }
   ]
-
-  const textColorClass = isOnLightSection ? 'text-gray-900' : 'text-white'
-  const iconColorClass = isOnLightSection ? 'text-gray-600' : 'text-gray-300'
-  const hoverTextClass = isOnLightSection ? 'group-hover:text-blue-600' : 'group-hover:text-blue-400'
-  const hoverIconClass = isOnLightSection ? 'group-hover:text-blue-600' : 'group-hover:text-blue-400'
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${

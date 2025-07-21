@@ -2,80 +2,114 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Users, MessageCircle, TrendingUp, Award, Shield, ArrowRight, Star } from 'lucide-react'
-import { Card } from '@/components/ui/Card'
-import AnimatedCounter from '@/components/ui/AnimatedCounter'
-import Image from 'next/image'
+import { TrendingUp, Target, Video, ClipboardList, Search, Zap, MessageCircle, BarChart3, Brain, Users } from 'lucide-react'
 
-const communityFeatures = [
+const features = [
   {
-    icon: Users,
-    title: "Expert Traders",
-    description: "Connect with professional traders and industry experts",
-    color: "text-blue-600",
-    stat: "500+",
-    statLabel: "Experts"
+    icon: TrendingUp,
+    title: "Proven Trading Strategies",
+    description: "Access to the same strategies I use to generate asymmetric returns with low risk",
+    iconColor: "text-red-500",
+    bgColor: "bg-red-50"
+  },
+  {
+    icon: Target,
+    title: "Fast-Moving Identification",
+    description: "Learn to spot explosive stocks and perfect entry timing",
+    iconColor: "text-red-500",
+    bgColor: "bg-red-50"
+  },
+  {
+    icon: Video,
+    title: "Video Lessons",
+    description: "Step-by-step breakdowns of real trades and execution",
+    iconColor: "text-gray-700",
+    bgColor: "bg-gray-100"
+  },
+  {
+    icon: ClipboardList,
+    title: "Exclusive Watchlist",
+    description: "Get curated updates to stay ahead of the market",
+    iconColor: "text-orange-500",
+    bgColor: "bg-orange-50"
+  },
+  {
+    icon: Search,
+    title: "Scanning Techniques",
+    description: "Build your personalized watchlist with expert filters",
+    iconColor: "text-blue-500",
+    bgColor: "bg-blue-50"
+  },
+  {
+    icon: Zap,
+    title: "Swing Trading",
+    description: "Master short-term profits while keeping your day job",
+    iconColor: "text-yellow-500",
+    bgColor: "bg-yellow-50"
   },
   {
     icon: MessageCircle,
-    title: "Live Discussions",
-    description: "Join real-time market discussions and analysis",
-    color: "text-blue-600",
-    stat: "24/7",
-    statLabel: "Active"
+    title: "Live Monthly Q&As",
+    description: "Get your questions answered in interactive sessions",
+    iconColor: "text-gray-600",
+    bgColor: "bg-gray-50"
   },
   {
-    icon: TrendingUp,
-    title: "Market Insights",
-    description: "Access exclusive market insights and trading strategies",
-    color: "text-blue-600",
-    stat: "Daily",
-    statLabel: "Updates"
+    icon: BarChart3,
+    title: "Technical Analysis",
+    description: "Learn to spot key setups and read charts effectively",
+    iconColor: "text-blue-500",
+    bgColor: "bg-blue-50"
   },
   {
-    icon: Award,
-    title: "Premium Content",
-    description: "Exclusive educational content and market research",
-    color: "text-blue-600",
-    stat: "1000+",
-    statLabel: "Resources"
+    icon: Brain,
+    title: "Mindset & Discipline",
+    description: "Build psychological resilience for long-term success",
+    iconColor: "text-pink-500",
+    bgColor: "bg-pink-50"
   },
-
   {
-    icon: Shield,
-    title: "Verified Members",
-    description: "Curated community of verified trading professionals",
-    color: "text-blue-600",
-    stat: "100%",
-    statLabel: "Verified"
+    icon: Users,
+    title: "Community Support",
+    description: "Connect with like-minded traders to grow together",
+    iconColor: "text-blue-500",
+    bgColor: "bg-blue-50"
+  },
+  {
+    icon: Target,
+    title: "Market Analysis",
+    description: "Master market conditions for optimal strategy selection",
+    iconColor: "text-red-500",
+    bgColor: "bg-red-50"
+  },
+  {
+    icon: BarChart3,
+    title: "Technical Analysis",
+    description: "Learn to spot key setups and read charts effectively",
+    iconColor: "text-blue-500",
+    bgColor: "bg-blue-50"
   }
-]
-
-const communityStats = [
-  { value: 50000, displayValue: "50,000+", label: "Active Members", icon: Users },
-  { value: 10000, displayValue: "10K+", label: "Daily Messages", icon: MessageCircle },
-  { value: 95, displayValue: "95%", label: "Success Rate", icon: TrendingUp },
-  { value: 4.9, displayValue: "4.9★", label: "Community Rating", icon: Star, decimals: 1 }
 ]
 
 export default function Community() {
   return (
-    <section id="community" className="relative py-12 sm:py-16 md:py-20 bg-white overflow-hidden">
-      {/* Trading Background Image */}
+    <section id="community" className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50 overflow-hidden">
+      {/* Professional Background Elements */}
       <div className="absolute inset-0">
-        <Image 
-          src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=600&fit=crop&crop=center" 
-          alt="Financial data background"
-          fill
-          className="w-full h-full object-cover opacity-5"
-        />
+        {/* Subtle Blue Orbs Only */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-slate-100 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }} />
+        </div>
       </div>
 
-
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
+        {/* Consistent Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -83,189 +117,84 @@ export default function Community() {
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          {/* Section Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+          {/* Hero-style Title */}
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-display leading-tight mb-3 md:mb-4"
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-2 mb-6"
-          >
-            <Users className="w-4 h-4 text-blue-600" />
-            <span className="text-blue-700 font-medium text-sm">Trading Community</span>
-          </motion.div>
-
-          <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-gray-900 mb-3 sm:mb-4 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Join the{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent">
-              Trading Community
+            <span className="text-gray-900 font-extrabold tracking-tight">
+              Why Choose{' '}
+            </span>
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight">
+              Stoxify
             </span>
           </motion.h2>
-          
-          <motion.p 
-            className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-body leading-relaxed mb-4 sm:mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Connect with professional traders and accelerate your trading journey through collaborative learning
-          </motion.p>
 
-          {/* Community Stats */}
-          <motion.div
+          <motion.p
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed px-4 mb-8 sm:mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto mb-6 sm:mb-8"
           >
-            {communityStats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="text-center group cursor-pointer"
-              >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
-                  <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div className="text-sm sm:text-lg font-bold font-display text-gray-900 mb-1 group-hover:text-blue-700 transition-colors duration-300">
-                  {stat.label === "Community Rating" ? (
-                    <AnimatedCounter 
-                      end={stat.value} 
-                      decimals={stat.decimals || 0}
-                      suffix="★"
-                      className="inline-block"
-                    />
-                  ) : stat.label === "Success Rate" ? (
-                    <AnimatedCounter 
-                      end={stat.value} 
-                      suffix="%"
-                      className="inline-block"
-                    />
-                  ) : stat.label === "Daily Messages" ? (
-                    <AnimatedCounter 
-                      end={stat.value} 
-                      suffix="K+"
-                      className="inline-block"
-                    />
-                  ) : (
-                    <AnimatedCounter 
-                      end={stat.value} 
-                      suffix="+"
-                      className="inline-block"
-                    />
-                  )}
-                </div>
-                <div className="text-xs text-gray-600 font-body">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+            Get ready to level up your trading game.
+          </motion.p>
         </motion.div>
 
-        {/* Community Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16 max-w-6xl mx-auto">
-          {communityFeatures.map((feature, index) => {
-            const isLastCard = index === communityFeatures.length - 1;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className={`group relative ${
-                  isLastCard ? 'sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none' : ''
-                }`}
-              >
-                <Card className="h-full p-4 sm:p-6 bg-white border border-gray-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl group-hover:shadow-blue-100 relative overflow-hidden">
-                  
-                  {/* Background Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-blue-50/0 to-blue-100/0 group-hover:from-blue-50/40 group-hover:via-blue-50/20 group-hover:to-blue-100/40 transition-all duration-500 rounded-lg"></div>
-                  
-                  <div className="relative z-10 flex flex-col items-center text-center">
-                    
-                    {/* Icon with enhanced animation */}
-                    <motion.div 
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center mb-3 sm:mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
-                      whileHover={{ scale: 1.15, rotate: 6 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <feature.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${feature.color} group-hover:scale-110 transition-transform duration-300`} />
-                    </motion.div>
-                    
-                    {/* Title */}
-                    <h3 className="text-lg sm:text-xl font-bold font-display text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-700 transition-colors duration-300">
-                      {feature.title}
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className="text-xs sm:text-sm text-gray-600 font-body leading-relaxed mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300">
-                      {feature.description}
-                    </p>
+        {/* Enhanced Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -12, scale: 1.03 }}
+              className="group relative"
+            >
+              {/* Card with enhanced styling */}
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 group-hover:border-white/40 h-full overflow-hidden">
 
-                    {/* Stats */}
-                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-2 sm:p-3 w-full group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
-                      <div className="text-sm sm:text-lg font-bold text-blue-700 mb-1">
-                        {feature.stat}
-                      </div>
-                      <div className="text-xs text-blue-600">
-                        {feature.statLabel}
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            );
-          })}
+                {/* Professional overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-blue-50/0 group-hover:from-blue-50/20 group-hover:to-blue-50/30 transition-all duration-500 rounded-3xl"></div>
+
+                {/* Subtle border glow */}
+                <div className="absolute inset-0 rounded-3xl bg-blue-500/0 group-hover:bg-blue-500/10 blur-xl transition-all duration-500"></div>
+
+                <div className="relative z-10 flex flex-col items-center text-center h-full">
+                  {/* Enhanced Icon */}
+                  <motion.div
+                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl ${feature.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl relative overflow-hidden`}
+                    whileHover={{ rotate: 8 }}
+                  >
+                    {/* Icon background glow */}
+                    <div className={`absolute inset-0 ${feature.bgColor} opacity-50 blur-md group-hover:opacity-70 transition-opacity duration-300`}></div>
+                    <feature.icon className={`relative w-7 h-7 sm:w-8 sm:h-8 ${feature.iconColor} group-hover:scale-110 transition-transform duration-300`} />
+                  </motion.div>
+
+                  {/* Enhanced Title */}
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300 leading-tight">
+                    {feature.title}
+                  </h3>
+
+                  {/* Enhanced Description */}
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 flex-grow">
+                    {feature.description}
+                  </p>
+
+                  {/* Professional bottom accent */}
+                  <div className="mt-4 w-10 h-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
 
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto relative overflow-hidden">
-            
-            <div className="relative z-10">
-              <h3 className="text-xl sm:text-2xl font-bold font-display text-gray-900 mb-3">
-                Ready to Connect with Elite Traders?
-              </h3>
-              <p className="text-gray-700 font-body mb-6 max-w-xl mx-auto leading-relaxed text-sm sm:text-base">
-                Join thousands of successful traders in our premium community
-              </p>
-              
-              <motion.button 
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl group text-sm"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="flex items-center gap-2">
-                  Join Community
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </motion.button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -13,7 +13,7 @@ export default function About() {
       </div>
 
       {/* Candlestick Background Image - Same as Hero */}
-      <div 
+      <div
         className="absolute inset-0 opacity-10 hidden md:block bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: 'url(/images/candlesticks.png)'
@@ -23,7 +23,7 @@ export default function About() {
       <div className="relative z-10 flex items-center min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             {/* Left Side - Professional Image */}
             <div className="relative flex justify-start">
               <div className="relative w-full max-w-lg">
@@ -47,7 +47,7 @@ export default function About() {
               className="space-y-8"
             >
               {/* Main Heading */}
-              <motion.h1 
+              <motion.h1
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -70,12 +70,12 @@ export default function About() {
                 viewport={{ once: true }}
               >
                 <p className="text-lg leading-relaxed">
-                  Join our exclusive member's club and transform your trading journey. Learn proven strategies, 
+                  Join our exclusive member's club and transform your trading journey. Learn proven strategies,
                   get market insights, and connect with successful traders who share their expertise.
                 </p>
-                
+
                 <p className="text-lg leading-relaxed">
-                  Stop trading in isolation. Start building wealth with a community that supports your growth 
+                  Stop trading in isolation. Start building wealth with a community that supports your growth
                   and helps you make smarter trading decisions every day.
                 </p>
               </motion.div>
@@ -95,7 +95,7 @@ export default function About() {
                 >
                   BECOME A MEMBER
                 </motion.button>
-                
+
                 <motion.button
                   className="bg-transparent border-2 border-gray-400 hover:border-white text-gray-300 hover:text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
@@ -127,7 +127,7 @@ export default function About() {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="text-white">
                   <span className="font-bold">3k+</span> in Followers on Twitter
                 </div>
