@@ -89,11 +89,13 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
       </motion.div>
 
-      {/* Animated Candlestick Background */}
+      {/* Animated Candlestick Background - Fixed for mobile */}
       <motion.div 
-        className="absolute inset-0 opacity-10 hidden md:block bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 opacity-10 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/candlesticks.png)'
+          backgroundImage: 'url(/images/candlesticks.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center'
         }}
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 0.1, scale: 1 }}
@@ -148,7 +150,7 @@ export default function Hero() {
                 variants={textVariants}
               >
                 <motion.span 
-                  className="text-white font-extrabold tracking-tight inline-block"
+                  className="text-white font-extrabold tracking-tight"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5, duration: 0.8, type: "spring" }}
@@ -156,7 +158,7 @@ export default function Hero() {
                   Join{' '}
                 </motion.span>
                 <motion.span 
-                  className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight inline-block"
+                  className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight"
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.7, duration: 1, type: "spring", stiffness: 100 }}

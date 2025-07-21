@@ -117,7 +117,7 @@ export default function Contact() {
               className="group relative"
             >
               <div 
-                className={`relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 group-hover:border-white/40 h-full overflow-hidden ${info.action ? 'cursor-pointer' : ''}`}
+                className={`relative bg-white backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 group-hover:border-gray-200 h-full overflow-hidden ${info.action ? 'cursor-pointer' : ''}`}
                 onClick={info.action}
               >
                 

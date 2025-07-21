@@ -286,40 +286,6 @@ export default function Pricing() {
           </motion.div>
         </div>
 
-        {/* Compact Trust Signals */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/30 max-w-3xl mx-auto">
-            <p className="text-gray-700 mb-4 font-medium">
-              30-day money-back guarantee
-            </p>
-            <div className="flex justify-center items-center gap-8 text-sm text-gray-600">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
-                  <Check className="w-3 h-3 text-green-600" />
-                </div>
-                <span>Cancel anytime</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
-                  <Check className="w-3 h-3 text-blue-600" />
-                </div>
-                <span>24/7 Support</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center">
-                  <Check className="w-3 h-3 text-purple-600" />
-                </div>
-                <span>Secure payments</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

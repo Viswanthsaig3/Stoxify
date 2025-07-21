@@ -144,65 +144,50 @@ export default function Community() {
           </motion.p>
         </motion.div>
 
-        {/* Enhanced Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-          {features.map((feature, index) => (
+        {/* Compact square cards with larger gaps - 4 column layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          {features.slice(0, 12).map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ 
-                duration: 0.6, 
-                delay: index * 0.1,
+                duration: 0.4, 
+                delay: index * 0.05,
                 type: "spring",
-                stiffness: 100,
-                damping: 12
+                stiffness: 150,
+                damping: 20
               }}
               viewport={{ once: true }}
               whileHover={{ 
-                y: -15, 
-                scale: 1.05,
-                rotateY: 5,
+                y: -3, 
+                scale: 1.01,
                 transition: {
                   type: "spring",
-                  stiffness: 300,
-                  damping: 20
+                  stiffness: 400,
+                  damping: 25
                 }
               }}
               className="group relative"
             >
-              {/* Card with enhanced styling */}
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 group-hover:border-white/40 h-full overflow-hidden">
+              {/* Mini square cards with extreme rounded corners */}
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-[88px] p-4 border border-white/60 shadow-2xl shadow-black/5 hover:border-white/80 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] hover:bg-white transition-all duration-500 h-full aspect-square ring-1 ring-gray-100/20">
 
-                {/* Professional overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-blue-50/0 group-hover:from-blue-50/20 group-hover:to-blue-50/30 transition-all duration-500 rounded-3xl"></div>
+                <div className="flex flex-col items-center text-center h-full justify-center">
+                  {/* Mini icon container */}
+                  <div className={`w-8 h-8 rounded-full ${feature.bgColor} flex items-center justify-center mb-2 transition-all duration-200 group-hover:scale-105`}>
+                    <feature.icon className={`w-4 h-4 ${feature.iconColor}`} />
+                  </div>
 
-                {/* Subtle border glow */}
-                <div className="absolute inset-0 rounded-3xl bg-blue-500/0 group-hover:bg-blue-500/10 blur-xl transition-all duration-500"></div>
-
-                <div className="relative z-10 flex flex-col items-center text-center h-full">
-                  {/* Enhanced Icon */}
-                  <motion.div
-                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl ${feature.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl relative overflow-hidden`}
-                    whileHover={{ rotate: 8 }}
-                  >
-                    {/* Icon background glow */}
-                    <div className={`absolute inset-0 ${feature.bgColor} opacity-50 blur-md group-hover:opacity-70 transition-opacity duration-300`}></div>
-                    <feature.icon className={`relative w-7 h-7 sm:w-8 sm:h-8 ${feature.iconColor} group-hover:scale-110 transition-transform duration-300`} />
-                  </motion.div>
-
-                  {/* Enhanced Title */}
-                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300 leading-tight">
+                  {/* Title with better readability */}
+                  <h3 className="text-sm font-semibold text-gray-900 mb-2 leading-tight">
                     {feature.title}
                   </h3>
 
-                  {/* Enhanced Description */}
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 flex-grow">
+                  {/* Description with improved size */}
+                  <p className="text-xs text-gray-600 leading-snug text-center">
                     {feature.description}
                   </p>
-
-                  {/* Professional bottom accent */}
-                  <div className="mt-4 w-10 h-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                 </div>
               </div>
             </motion.div>
