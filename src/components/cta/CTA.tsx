@@ -111,24 +111,42 @@ export default function CTA() {
           {/* Join Now Button */}
           <motion.button
             onClick={handleJoinNow}
-            className="group relative bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
-            whileHover={hoverAnimations.cardHover}
-            whileTap={tapAnimations.gentle}
+            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 backdrop-blur-xl border border-blue-500/30 hover:border-blue-400/60 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-500 shadow-2xl hover:shadow-blue-500/60 flex items-center justify-center gap-3
+            before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out
+            after:absolute after:inset-0 after:bg-gradient-to-r after:from-blue-400/0 after:via-blue-300/30 after:to-blue-400/0 after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-[1500ms] after:delay-300"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <Users className="w-5 h-5" />
-            <span>Become a Member</span>
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            <span className="relative z-10 flex items-center justify-center gap-3">
+              <Users className="w-5 h-5" />
+              <span>Become a Member</span>
+              <motion.div
+                animate={{ x: [0, 3, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300" />
+              </motion.div>
+            </span>
           </motion.button>
 
           {/* Watch Members Stories Button */}
           <motion.button
             onClick={handleWatchStories}
-            className="group relative bg-white hover:bg-gray-50 text-gray-800 border-2 border-gray-300 hover:border-blue-500 font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
-            whileHover={hoverAnimations.cardHover}
-            whileTap={tapAnimations.gentle}
+            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 backdrop-blur-xl border border-blue-500/30 hover:border-blue-400/60 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-500 shadow-2xl hover:shadow-blue-500/60 flex items-center justify-center gap-3
+            before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out
+            after:absolute after:inset-0 after:bg-gradient-to-r after:from-blue-400/0 after:via-blue-300/30 after:to-blue-400/0 after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-[1500ms] after:delay-300"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <span>Watch Members Stories</span>
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            <span className="relative z-10 flex items-center justify-center gap-3">
+              <span>Watch Members Stories</span>
+              <motion.div
+                animate={{ x: [0, 3, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 group-hover:scale-110 transition-all duration-300" />
+              </motion.div>
+            </span>
           </motion.button>
         </motion.div>
       </div>

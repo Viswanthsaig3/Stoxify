@@ -226,14 +226,16 @@ export default function Pricing() {
             </div>
 
             <motion.button 
-              className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
+              className="w-full relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 backdrop-blur-xl border border-blue-500/30 hover:border-blue-400/60 text-white font-semibold py-3 rounded-xl transition-all duration-500 shadow-2xl hover:shadow-blue-500/60 group text-sm
+              before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out
+              after:absolute after:inset-0 after:bg-gradient-to-r after:from-blue-400/0 after:via-blue-300/30 after:to-blue-400/0 after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-[1500ms] after:delay-300"
               onClick={() => {
                 window.open('https://wa.me/917011957726?text=Hello%2C%20I%20want%20to%20join%20Stocks%20plan', '_blank')
               }}
-              whileHover={hoverAnimations.buttonHover}
-              whileTap={tapAnimations.gentle}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Join Stocks Plan
+              <span className="relative z-10">Become a Member</span>
             </motion.button>
           </motion.div>
 
@@ -283,14 +285,16 @@ export default function Pricing() {
             </div>
 
             <motion.button 
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
+              className="w-full relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 backdrop-blur-xl border border-blue-500/30 hover:border-blue-400/60 text-white font-semibold py-3 rounded-xl transition-all duration-500 shadow-2xl hover:shadow-blue-500/60 group text-sm
+              before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out
+              after:absolute after:inset-0 after:bg-gradient-to-r after:from-blue-400/0 after:via-blue-300/30 after:to-blue-400/0 after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-[1500ms] after:delay-300"
               onClick={() => {
                 window.open('https://wa.me/917011957726?text=Hello%2C%20I%20want%20to%20join%20Forex%20plan', '_blank')
               }}
-              whileHover={hoverAnimations.buttonHover}
-              whileTap={tapAnimations.gentle}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Join Forex Plan
+              <span className="relative z-10">Become a Member</span>
             </motion.button>
           </motion.div>
 
@@ -333,14 +337,16 @@ export default function Pricing() {
             </div>
 
             <motion.button 
-              className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
+              className="w-full relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 backdrop-blur-xl border border-blue-500/30 hover:border-blue-400/60 text-white font-semibold py-3 rounded-xl transition-all duration-500 shadow-2xl hover:shadow-blue-500/60 group text-sm
+              before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out
+              after:absolute after:inset-0 after:bg-gradient-to-r after:from-blue-400/0 after:via-blue-300/30 after:to-blue-400/0 after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-[1500ms] after:delay-300"
               onClick={() => {
                 window.open('https://wa.me/917011957726?text=Hello%2C%20I%20want%20to%20join%20Crypto%20plan', '_blank')
               }}
-              whileHover={hoverAnimations.buttonHover}
-              whileTap={tapAnimations.gentle}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Join Crypto Plan
+              <span className="relative z-10">Become a Member</span>
             </motion.button>
           </motion.div>
         </motion.div>

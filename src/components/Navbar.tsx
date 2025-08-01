@@ -131,8 +131,9 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <motion.button 
-              className="relative overflow-hidden bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl group
-              before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out"
+              className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 backdrop-blur-xl border border-blue-500/30 hover:border-blue-400/60 text-white p-3 rounded-xl font-semibold text-sm transition-all duration-500 shadow-2xl hover:shadow-blue-500/60 group
+              before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out
+              after:absolute after:inset-0 after:bg-gradient-to-r after:from-blue-400/0 after:via-blue-300/30 after:to-blue-400/0 after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-[1500ms] after:delay-300"
               onClick={() => {
               const pricingSection = document.getElementById('pricing')
               if (pricingSection) {
@@ -142,10 +143,8 @@ export default function Navbar() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10 flex items-center space-x-2">
-                <MessageCircle className="w-4 h-4" />
-                <span>Join Community</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              <span className="relative z-10 flex items-center justify-center">
+                <MessageCircle className="w-5 h-5" />
               </span>
             </motion.button>
           </div>
@@ -231,7 +230,9 @@ export default function Navbar() {
               
               <div className="pt-4 px-4">
                 <motion.button 
-                  className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group"
+                  className="w-full relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 backdrop-blur-xl border border-blue-500/30 hover:border-blue-400/60 text-white p-3 rounded-xl font-semibold text-sm transition-all duration-500 shadow-2xl hover:shadow-blue-500/60 flex items-center justify-center group
+                  before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out
+                  after:absolute after:inset-0 after:bg-gradient-to-r after:from-blue-400/0 after:via-blue-300/30 after:to-blue-400/0 after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-[1500ms] after:delay-300"
                   onClick={() => {
                     setIsMobileMenuOpen(false)
                     const pricingSection = document.getElementById('pricing')
@@ -245,9 +246,9 @@ export default function Navbar() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Join Community</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <span className="relative z-10">
+                    <MessageCircle className="w-5 h-5" />
+                  </span>
                 </motion.button>
               </div>
             </div>

@@ -158,7 +158,7 @@ export default function Hero() {
                 whileTap={tapAnimations.gentle}
               >
                 <span className="flex items-center justify-center gap-2">
-                  Learn More
+                  Become a Member
                   <motion.div
                     whileHover={hoverAnimations.iconHover}
                   >
