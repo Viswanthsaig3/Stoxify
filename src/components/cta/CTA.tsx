@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Users, TrendingUp, Shield, Star, Award } from 'lucide-react'
+import { ArrowRight, Users, TrendingUp, Shield, Star } from 'lucide-react'
 import { 
   entranceAnimations, 
   hoverAnimations, 

@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Menu, X, ArrowRight, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { CONTACT_INFO } from '@/lib/constants'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)

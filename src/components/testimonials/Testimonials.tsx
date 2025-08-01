@@ -3,9 +3,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
-import { 
-  entranceAnimations
-} from '@/lib/animations'
 
 const testimonials = [
   {
