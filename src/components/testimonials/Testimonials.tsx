@@ -12,14 +12,14 @@ const testimonials = [
     name: "Sneha S.",
     location: "Delhi",
     rating: 5,
-    text: "Stoxify transformed how I view markets. The pre-market outlook gives me direction and group support keeps me disciplined.",
+    text: "StoXify transformed how I view markets. The pre-market outlook gives me direction and group support keeps me disciplined.",
     date: "March 2024"
   },
   {
     name: "Alok Srivastava",
     location: "Varanashi",
     rating: 4,
-    text: "I used to chase stocks randomly. After Stoxify, I wait for breakout patterns with reduced risk and consistent profits.",
+    text: "I used to chase stocks randomly. After StoXify, I wait for breakout patterns with reduced risk and consistent profits.",
     date: "January 2024"
   },
   {
@@ -33,14 +33,14 @@ const testimonials = [
     name: "Vikram T.",
     location: "Hyderabad",
     rating: 5,
-    text: "Stoxify's sector rotation insights changed how I pick trades. I see patterns before they unfold like institutions!",
+    text: "StoXify's sector rotation insights changed how I pick trades. I see patterns before they unfold like institutions!",
     date: "April 2024"
   },
   {
     name: "Priya N.",
     location: "Kolkata",
     rating: 4,
-    text: "I felt lost before Stoxify. Now I journal trades, follow SL/TP zones, and my mindset has grown stronger.",
+    text: "I felt lost before StoXify. Now I journal trades, follow SL/TP zones, and my mindset has grown stronger.",
     date: "December 2024"
   },
   {
@@ -54,14 +54,14 @@ const testimonials = [
     name: "Tejasvi U.",
     location: "Jaipur",
     rating: 5,
-    text: "I finally feel like a real trader. Stoxify strategies gave me confidence to hold trades with logic, not emotion.",
+    text: "I finally feel like a real trader. StoXify strategies gave me confidence to hold trades with logic, not emotion.",
     date: "October 2024"
   },
   {
     name: "Sachin V.",
     location: "Ahmedabad",
     rating: 4,
-    text: "Trading used to stress me with indecision. Now Stoxify ideas come with rationale—calming to follow proven structure.",
+    text: "Trading used to stress me with indecision. Now StoXify ideas come with rationale—calming to follow proven structure.",
     date: "September 2024"
   },
   {
@@ -75,7 +75,7 @@ const testimonials = [
     name: "Rohit S.",
     location: "Noida",
     rating: 5,
-    text: "Stoxify's post-market recap sessions are gold. Reviewing trades against setups helped spot my mistake patterns.",
+    text: "StoXify's post-market recap sessions are gold. Reviewing trades against setups helped spot my mistake patterns.",
     date: "July 2024"
   },
   {
@@ -96,21 +96,21 @@ const testimonials = [
     name: "Shweta L.",
     location: "Patna",
     rating: 5,
-    text: "Economics and earnings calendars taught by Stoxify make me plan better around key events. My trades feel safer and more informed.",
+    text: "Economics and earnings calendars taught by StoXify make me plan better around key events. My trades feel safer and more informed.",
     date: "April 2025"
   },
   {
     name: "Amit J.",
     location: "Kochi",
     rating: 4,
-    text: "Stoxify helped me build consistency over chaos. I no longer flip charts aimlessly; I now follow a structured market outlook.",
+    text: "StoXify helped me build consistency over chaos. I no longer flip charts aimlessly; I now follow a structured market outlook.",
     date: "March 2025"
   },
   {
     name: "Karthik A.",
     location: "Chennai",
     rating: 5,
-    text: "Stoxify's gold trading strategies changed the game for me. I used to fear gold volatility—now I embrace it with confidence.",
+    text: "StoXify's gold trading strategies changed the game for me. I used to fear gold volatility—now I embrace it with confidence.",
     date: "February 2025"
   },
   {
@@ -138,7 +138,7 @@ const testimonials = [
     name: "Nitesh S.",
     location: "Mumbai",
     rating: 5,
-    text: "Before Stoxify, I never knew how to position myself around news events. Now I track pips and manage risk like a pro.",
+    text: "Before StoXify, I never knew how to position myself around news events. Now I track pips and manage risk like a pro.",
     date: "October 2024"
   },
   {

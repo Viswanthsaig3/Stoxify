@@ -132,7 +132,7 @@ export default function Features() {
               Why Choose{' '}
             </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight">
-              Stoxify
+              StoXify
             </span>
           </motion.h2>
 

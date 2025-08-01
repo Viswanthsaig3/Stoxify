@@ -1,7 +1,7 @@
-# Stoxify - Premium Trading Landing Page
+# StoXify - Premium Trading Landing Page
 
 ## Project Overview
-Stoxify is a premium trading community landing page designed to showcase "India's Biggest Trading Community" with modern, futuristic design elements and advanced animations.
+StoXify is a premium trading community landing page designed to showcase "India's Biggest Trading Community" with modern, futuristic design elements and advanced animations.
 
 ## Design Inspiration
 Based on research of leading trading platforms:
@@ -97,7 +97,7 @@ npm run type-check
 
 ## File Structure
 ```
-stoxify/
+StoXify/
 ├── app/
 │   ├── globals.css
 │   ├── layout.tsx

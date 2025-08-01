@@ -21,32 +21,32 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Stoxify - India\'s Largest Trading Community',
+  title: 'StoXify - India\'s Largest Trading Community',
   description: 'Join India\'s largest educational trading community focused on swing trading. Learn from experts with purely educational content and insights.',
   keywords: 'trading education, stock market learning, swing trading, India, community, educational content, trading analysis',
-  authors: [{ name: 'Stoxify Team' }],
-  creator: 'Stoxify',
-  publisher: 'Stoxify',
+  authors: [{ name: 'StoXify Team' }],
+  creator: 'StoXify',
+  publisher: 'StoXify',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://stoxify.com'),
+  metadataBase: new URL('https://StoXify.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Stoxify - India\'s Largest Trading Community',
+    title: 'StoXify - India\'s Largest Trading Community',
     description: 'Join India\'s largest educational trading community focused on swing trading. Learn from experts with purely educational content.',
-    url: 'https://stoxify.com',
-    siteName: 'Stoxify',
+    url: 'https://StoXify.com',
+    siteName: 'StoXify',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Stoxify - Trading Community',
+        alt: 'StoXify - Trading Community',
       },
     ],
     locale: 'en_US',
@@ -54,10 +54,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stoxify - India\'s Largest Trading Community',
+    title: 'StoXify - India\'s Largest Trading Community',
     description: 'Join India\'s largest educational trading community focused on swing trading. Learn from experts with purely educational content.',
     images: ['/images/og-image.jpg'],
-    creator: '@stoxify',
+    creator: '@StoXify',
   },
   robots: {
     index: true,
@@ -82,7 +82,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <link rel="preload" href="/images/StoxifyLogo.PNG" as="image" />
+        <link rel="preload" href="/images/StoXifyLogo.PNG" as="image" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
       </head>

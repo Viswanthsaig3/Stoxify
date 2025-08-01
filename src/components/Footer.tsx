@@ -57,8 +57,8 @@ export default function Footer() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="relative">
                   <Image
-                    src="/images/StoxifyLogo.PNG"
-                    alt="Stoxify Logo"
+                    src="/images/StoXifyLogo.PNG"
+                    alt="StoXify Logo"
                     width={40}
                     height={40}
                     className="rounded-xl"
@@ -66,7 +66,7 @@ export default function Footer() {
                 </div>
                 <h3 className="text-2xl font-bold font-display">
                   <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-                    STOXIFY
+                    StoXify
                   </span>
                 </h3>
               </div>
@@ -156,7 +156,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
               <p className="text-gray-500 text-sm">
-                © 2024 Stoxify. All rights reserved.
+                © 2024 StoXify. All rights reserved.
               </p>
               <div className="hidden md:block w-1 h-1 bg-gray-500 rounded-full"></div>
               <p className="text-gray-500 text-sm">

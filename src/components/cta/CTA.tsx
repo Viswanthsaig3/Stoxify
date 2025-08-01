@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Users } from 'lucide-react'
+import { ArrowRight, Users, TrendingUp, Shield, Star, Award } from 'lucide-react'
 import { 
   entranceAnimations, 
   hoverAnimations, 
@@ -60,7 +60,7 @@ export default function CTA() {
           </motion.h2>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed px-4 mb-8 sm:mb-12"
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed px-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -69,6 +69,32 @@ export default function CTA() {
             Ready to transform your trading journey? Join thousands of successful traders who've already 
             elevated their skills and profits with our proven strategies and supportive community.
           </motion.p>
+
+          {/* Trust Indicators */}
+          <motion.div
+            className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 mb-8 sm:mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-2 text-gray-700">
+              <Users className="w-5 h-5 text-blue-600" />
+              <span className="font-semibold text-sm sm:text-base">10,000+ Active Members</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-700">
+              <TrendingUp className="w-5 h-5 text-green-600" />
+              <span className="font-semibold text-sm sm:text-base">95% Success Rate</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-700">
+              <Star className="w-5 h-5 text-yellow-500" />
+              <span className="font-semibold text-sm sm:text-base">4.9/5 Rating</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-700">
+              <Shield className="w-5 h-5 text-blue-600" />
+              <span className="font-semibold text-sm sm:text-base">100% Educational</span>
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Action Buttons */}

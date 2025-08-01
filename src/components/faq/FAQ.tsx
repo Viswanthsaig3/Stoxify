@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Plus, Minus, HelpCircle } from 'lucide-react'
+import { Plus, Minus } from 'lucide-react'
 
 const faqs = [
   {
@@ -35,87 +35,62 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
-      </div>
-
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-12 bg-gradient-to-br from-aliceblue-100 to-white-100">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12 md:mb-16"
+          className="text-center mb-8"
         >
-          <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-display leading-tight mb-3 md:mb-4"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-white font-extrabold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display leading-tight mb-3">
+            <span className="text-gray-900 font-extrabold tracking-tight">
               Frequently Asked{' '}
             </span>
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight">
               Questions
             </span>
-          </motion.h2>
+          </h2>
+          <p className="text-gray-700">
+            Quick answers to common questions
+          </p>
         </motion.div>
 
-        {/* Enhanced FAQ Items */}
-        <div className="space-y-4">
+        {/* FAQ Items */}
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ 
-                duration: 0.6, 
-                delay: index * 0.1,
-                type: "spring",
-                stiffness: 100,
-                damping: 15
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.02,
-                y: -5,
-                transition: { type: "spring", stiffness: 300, damping: 20 }
-              }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden"
+              className={`bg-white border rounded-lg overflow-hidden shadow-sm transition-all duration-300 ${
+                openIndex === index 
+                  ? 'border-blue-500 shadow-blue-100' 
+                  : 'border-gray-200'
+              }`}
             >
-              <motion.button
+              <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-white/5 transition-all duration-300"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
+                className={`w-full px-5 py-4 text-left flex items-center justify-between transition-colors duration-200 border-none outline-none focus:outline-none focus:ring-0 ${
+                  openIndex === index ? 'bg-transparent' : 'hover:bg-gray-50'
+                }`}
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <HelpCircle className="w-5 h-5 text-blue-400" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white pr-4">
-                    {faq.question}
-                  </h3>
-                </div>
+                <h3 className="text-base font-semibold text-gray-900 pr-4">
+                  {faq.question}
+                </h3>
                 <motion.div
-                  animate={{ rotate: openIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
+                  animate={{ rotate: openIndex === index ? 45 : 0 }}
+                  transition={{ duration: 0.2 }}
                   className="flex-shrink-0"
                 >
-                  {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-blue-400" />
-                  ) : (
-                    <Plus className="w-5 h-5 text-blue-400" />
-                  )}
+                  <Plus className="w-4 h-4 text-gray-700" />
                 </motion.div>
-              </motion.button>
+              </button>
               
               <AnimatePresence>
                 {openIndex === index && (
@@ -126,8 +101,8 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-6 pl-20">
-                      <p className="text-gray-300 leading-relaxed">
+                    <div className="px-5 pb-4">
+                      <p className="text-sm text-gray-800 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -137,24 +112,6 @@ export default function FAQ() {
             </motion.div>
           ))}
         </div>
-
-        {/* More FAQs Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <motion.button
-            className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl
-            before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="relative z-10">View More FAQs</span>
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   )

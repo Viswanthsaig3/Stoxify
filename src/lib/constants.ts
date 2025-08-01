@@ -93,7 +93,7 @@ export const TESTIMONIALS = [
     role: "Software Engineer",
     location: "Bangalore",
     image: "/images/testimonial-1.jpg",
-    content: "Stoxify transformed my trading journey. From losing money to consistent profits, their expert guidance and AI signals have been game-changing.",
+    content: "StoXify transformed my trading journey. From losing money to consistent profits, their expert guidance and AI signals have been game-changing.",
     profit: "₹2.5L",
     duration: "6 months"
   },
@@ -170,7 +170,7 @@ export const CONTACT_INFO = {
     url: "https://wa.me/917011957726?text=Hello%2C%20I%20just%20visited%20your%20website%2C%20I%20have%20some%20queries.%20Please%20connect%20me%20with%20the%20support%20team"
   },
   phone: "7011957726",
-  email: "support@stoxify.com"
+  email: "support@StoXify.com"
 }
 
 export const FOOTER_LINKS = [

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Check, TrendingUp, Bitcoin, DollarSign, Crown, Sparkles } from 'lucide-react'
+import { Check, TrendingUp, Bitcoin, DollarSign } from 'lucide-react'
 import { 
   entranceAnimations, 
   hoverAnimations, 
@@ -13,290 +13,326 @@ import {
 const pricingData = {
   stocks: {
     quarterly: {
-      price: "₹5,499",
-      originalPrice: "₹7,999",
+      price: "₹2,999",
       period: "3 months",
-      popular: false,
       features: [
-        "Advanced stock analysis tools",
-        "Real-time market data",
-        "Portfolio tracking",
-        "Expert stock picks",
-        "Risk management tools",
-        "Community access",
-        "Email support"
-      ]
+        "Daily Swing & Breakout Trade Ideas (Equity & Futures)",
+        "Short, Medium & Long-Term Investment Ideas",
+        "Pre-Market Watchlist + Weekly Market Outlook",
+        "Access to Exclusive Stock Screeners",
+        "Monthly Webinars & Group Discussions",
+        "Upcoming News Events & Economic Calendars"
+      ],
+      ideal: "Traders & investors wanting to build consistency in stock swing trading using technical and fundamental insights."
     },
-    yearly: {
-      price: "₹14,449",
-      originalPrice: "₹21,999",
+    annually: {
+      price: "₹7,999",
       period: "12 months",
-      popular: true,
       features: [
-        "All quarterly features",
-        "Priority support",
-        "Advanced analytics",
-        "Custom alerts",
-        "One-on-one sessions",
-        "Exclusive webinars",
-        "Mobile app premium"
-      ]
-    }
-  },
-  crypto: {
-    quarterly: {
-      price: "$199",
-      originalPrice: "$299",
-      period: "3 months",
-      popular: false,
-      features: [
-        "Crypto market analysis",
-        "DeFi opportunities",
-        "NFT insights",
-        "Portfolio tracking",
-        "Risk assessment",
-        "Community access",
-        "Email support"
-      ]
-    },
-    yearly: {
-      price: "$449",
-      originalPrice: "$699",
-      period: "12 months",
-      popular: true,
-      features: [
-        "All quarterly features",
-        "Priority support",
-        "Advanced DeFi tools",
-        "Custom alerts",
-        "One-on-one sessions",
-        "Exclusive research",
-        "Mobile app premium"
-      ]
+        "Daily Swing & Breakout Trade Ideas (Equity & Futures)",
+        "Short, Medium & Long-Term Investment Ideas",
+        "Pre-Market Watchlist + Weekly Market Outlook",
+        "Access to Exclusive Stock Screeners",
+        "Monthly Webinars & Group Discussions",
+        "Upcoming News Events & Economic Calendars"
+      ],
+      ideal: "Traders & investors wanting to build consistency in stock swing trading using technical and fundamental insights."
     }
   },
   forex: {
     quarterly: {
-      price: "$49",
-      originalPrice: "$79",
+      price: "₹4,999",
       period: "3 months",
-      popular: false,
       features: [
-        "Forex market analysis",
-        "Currency pair insights",
-        "Economic calendar",
-        "Risk management",
-        "Trading signals",
-        "Community access",
-        "Email support"
-      ]
+        "20+ Weekly Forex Trade Setups (Major & Minor Pairs)",
+        "Entry, Stop-Loss, and Target Price Details",
+        "High Win-Rate Strategies (Up to 83%) – Educational Use Only",
+        "Lot Sizing & Risk Management Guidance",
+        "3500+ Pips Monthly Potential (For Tracking & Study)",
+        "News Trading With the Community",
+        "Weekly Market Review & Watchlist",
+        "Monthly Webinars & Group Learning Sessions"
+      ],
+      ideal: "Beginners to intermediate traders who want structured forex learning through example-based trading plans."
     },
-    yearly: {
-      price: "$129",
-      originalPrice: "$199",
+    annually: {
+      price: "₹14,999",
       period: "12 months",
-      popular: true,
       features: [
-        "All quarterly features",
-        "Priority support",
-        "Advanced signals",
-        "Custom alerts",
-        "One-on-one sessions",
-        "Exclusive analysis",
-        "Mobile app premium"
-      ]
+        "20+ Weekly Forex Trade Setups (Major & Minor Pairs)",
+        "Entry, Stop-Loss, and Target Price Details",
+        "High Win-Rate Strategies (Up to 83%) – Educational Use Only",
+        "Lot Sizing & Risk Management Guidance",
+        "3500+ Pips Monthly Potential (For Tracking & Study)",
+        "News Trading With the Community",
+        "Weekly Market Review & Watchlist",
+        "Monthly Webinars & Group Learning Sessions"
+      ],
+      ideal: "Beginners to intermediate traders who want structured forex learning through example-based trading plans."
+    }
+  },
+  crypto: {
+    quarterly: {
+      price: "₹3,999",
+      period: "3 months",
+      features: [
+        "20+ crypto setups weekly (scalping, swing, trend reversal patterns)",
+        "Learning-focused breakdown of entries, SL, and target zones",
+        "Weekly crypto market watchlists and sentiment analysis",
+        "News-based strategy sessions with real-time community chat",
+        "Monthly webinars on crypto trading strategies and market cycles",
+        "Peer discussions, Q&A, and member-led analysis review"
+      ],
+      ideal: "Crypto enthusiasts looking to understand market patterns and develop structured trading approaches."
+    },
+    annually: {
+      price: "₹11,999",
+      period: "12 months",
+      features: [
+        "20+ crypto setups weekly (scalping, swing, trend reversal patterns)",
+        "Learning-focused breakdown of entries, SL, and target zones",
+        "Weekly crypto market watchlists and sentiment analysis",
+        "News-based strategy sessions with real-time community chat",
+        "Monthly webinars on crypto trading strategies and market cycles",
+        "Peer discussions, Q&A, and member-led analysis review"
+      ],
+      ideal: "Crypto enthusiasts looking to understand market patterns and develop structured trading approaches."
     }
   }
 }
 
-const tabs = [
-  { id: 'stocks', name: 'Stocks', icon: TrendingUp },
-  { id: 'crypto', name: 'Crypto', icon: Bitcoin },
-  { id: 'forex', name: 'Forex', icon: DollarSign }
-]
-
 export default function Pricing() {
-  const [activeTab, setActiveTab] = useState('forex')
-
-  const currentData = pricingData[activeTab as keyof typeof pricingData]
+  const [activePeriod, setActivePeriod] = useState<'quarterly' | 'annually'>('quarterly')
 
   return (
-    <section id="pricing" className="relative py-16 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50 overflow-hidden">
-      {/* Background Elements */}
+    <section id="pricing" className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900 overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-slate-100 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Compact Header */}
+        {/* Header */}
         <motion.div
-          {...entranceAnimations.fadeInScale}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-3">
-            <span className="text-gray-900 font-extrabold">Choose Your </span>
-            <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight mb-2 md:mb-3"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-white font-extrabold tracking-tight">
+              Choose Your{' '}
+            </span>
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight">
               Plan
             </span>
-          </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
-            Join thousands of successful traders with proven strategies.
-          </p>
+          </motion.h2>
+          
+          <motion.p 
+            className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto font-light leading-relaxed px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Join thousands of successful traders with proven strategies tailored to your trading style.
+          </motion.p>
         </motion.div>
 
-        {/* Compact Tabs */}
+        {/* Modern Pill-Shaped Period Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-10"
+          className="flex justify-center mb-8"
         >
-          <div className="inline-flex bg-white rounded-xl p-1 shadow-md border border-gray-200">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
-                  activeTab === tab.id
-                    ? 'bg-blue-500 text-white shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                }`}
-              >
-                <tab.icon className="w-4 h-4" />
-                {tab.name}
-                {tab.id === 'forex' && (
-                  <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${
-                    activeTab === tab.id ? 'bg-blue-400 text-white' : 'bg-blue-100 text-blue-700'
-                  }`}>
-                    Popular
-                  </span>
-                )}
-              </button>
-            ))}
+          <div className="inline-flex bg-slate-800/50 backdrop-blur-sm rounded-full p-1 border border-slate-700/50">
+            <button
+              onClick={() => setActivePeriod('quarterly')}
+              className={`px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${
+                activePeriod === 'quarterly'
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : 'text-gray-300 hover:text-white hover:bg-slate-700/50'
+              }`}
+            >
+              Quarterly
+            </button>
+            <button
+              onClick={() => setActivePeriod('annually')}
+              className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 relative ${
+                activePeriod === 'annually'
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : 'text-gray-300 hover:text-white hover:bg-slate-700/50'
+              }`}
+            >
+              Annually
+              <span className="absolute -top-1 -right-1 bg-green-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+                Save 30%
+              </span>
+            </button>
           </div>
         </motion.div>
 
-        {/* Premium Pricing Cards */}
+        {/* Pricing Cards */}
         <motion.div 
-          className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+          className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
           {...containerAnimations.cardContainer}
         >
           
-          {/* Quarterly Plan */}
+          {/* Stocks Card */}
           <motion.div
-            {...entranceAnimations.slideInLeft}
-            transition={{ ...entranceAnimations.slideInLeft.transition, delay: 0.2 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
             whileHover={hoverAnimations.cardHover}
-            className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 relative transition-all duration-300"
+            className="bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700/50 shadow-2xl shadow-black/20 hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-500"
           >
-            <div className="text-center mb-6">
-              <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-3 py-1 mb-3">
-                <Sparkles className="w-3 h-3 text-gray-600" />
-                <span className="text-xs font-semibold text-gray-700">Quarterly</span>
+            <div className="text-center mb-4">
+              <div className="inline-flex items-center gap-2 bg-green-500/20 text-green-400 rounded-full px-2 py-1 mb-3">
+                <TrendingUp className="w-4 h-4" />
+                <span className="text-xs font-semibold">Stocks</span>
               </div>
               
               <div className="mb-3">
-                <span className="text-4xl font-bold text-gray-900">{currentData.quarterly.price}</span>
-                <span className="text-gray-600 ml-2">/ {currentData.quarterly.period}</span>
+                <span className="text-3xl font-bold text-white">{pricingData.stocks[activePeriod].price}</span>
+                <span className="text-gray-400 ml-2">/ {pricingData.stocks[activePeriod].period}</span>
               </div>
-              
-              {currentData.quarterly.originalPrice && (
-                <div className="text-sm text-gray-500 mb-2">
-                  <span className="line-through">{currentData.quarterly.originalPrice}</span>
-                  <span className="ml-2 text-green-600 font-semibold">Save 31%</span>
-                </div>
-              )}
-              
-              <p className="text-sm text-gray-600">Perfect for getting started</p>
             </div>
 
-            <div className="space-y-3 mb-6">
-              {currentData.quarterly.features.slice(0, 5).map((feature, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <div className="w-4 h-4 rounded-full bg-blue-100 flex items-center justify-center mt-0.5 flex-shrink-0">
-                    <Check className="w-2.5 h-2.5 text-blue-600" />
+            <div className="space-y-2 mb-4">
+              {pricingData.stocks[activePeriod].features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-4 h-4 rounded-full bg-blue-500/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                    <Check className="w-2.5 h-2.5 text-blue-400" />
                   </div>
-                  <span className="text-sm text-gray-700">{feature}</span>
+                  <span className="text-xs text-gray-300 leading-relaxed">{feature}</span>
                 </div>
               ))}
-              <div className="text-xs text-gray-500 pl-6">
-                +{currentData.quarterly.features.length - 5} more features
-              </div>
+            </div>
+
+            <div className="mb-4 p-3 bg-slate-800/50 rounded-lg border border-slate-700/30">
+              <p className="text-xs text-gray-400 italic leading-tight">
+                <span className="font-semibold text-blue-400">Ideal For:</span> {pricingData.stocks[activePeriod].ideal}
+              </p>
             </div>
 
             <motion.button 
-              className="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 rounded-xl transition-colors duration-200"
+              className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
               whileHover={hoverAnimations.buttonHover}
               whileTap={tapAnimations.gentle}
             >
-              Get Started
+              Choose Stocks
             </motion.button>
           </motion.div>
 
-          {/* Yearly Plan */}
+          {/* Forex Card - Popular */}
           <motion.div
-            {...entranceAnimations.slideInRight}
-            transition={{ ...entranceAnimations.slideInRight.transition, delay: 0.4 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             whileHover={hoverAnimations.cardHover}
-            className="bg-white rounded-2xl p-6 shadow-xl border-2 border-blue-200 relative transition-all duration-300"
+            className="bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 backdrop-blur-sm rounded-xl p-4 border-2 border-blue-500/50 shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/20 hover:border-blue-400/60 transition-all duration-500 relative"
           >
             {/* Popular Badge */}
-            {currentData.yearly.popular && (
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
-                  <Crown className="w-3 h-3" />
-                  Most Popular
-                </div>
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold">
+                Most Popular
               </div>
-            )}
+            </div>
 
-            <div className="text-center mb-6 pt-2">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full px-3 py-1 mb-3">
-                <Crown className="w-3 h-3" />
-                <span className="text-xs font-semibold">Yearly - Best Value</span>
+            <div className="text-center mb-4 pt-1">
+              <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-400 rounded-full px-2 py-1 mb-3">
+                <DollarSign className="w-4 h-4" />
+                <span className="text-xs font-semibold">Forex</span>
               </div>
               
               <div className="mb-3">
-                <span className="text-4xl font-bold text-gray-900">{currentData.yearly.price}</span>
-                <span className="text-gray-600 ml-2">/ {currentData.yearly.period}</span>
+                <span className="text-4xl font-bold text-white">{pricingData.forex[activePeriod].price}</span>
+                <span className="text-gray-400 ml-2">/ {pricingData.forex[activePeriod].period}</span>
               </div>
-              
-              {currentData.yearly.originalPrice && (
-                <div className="text-sm text-gray-500 mb-2">
-                  <span className="line-through">{currentData.yearly.originalPrice}</span>
-                  <span className="ml-2 text-green-600 font-semibold">Save 36%</span>
-                </div>
-              )}
-              
-              <p className="text-sm text-gray-600">Best value for serious traders</p>
             </div>
 
-            <div className="space-y-3 mb-6">
-              {currentData.yearly.features.slice(0, 5).map((feature, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <div className="w-4 h-4 rounded-full bg-blue-100 flex items-center justify-center mt-0.5 flex-shrink-0">
-                    <Check className="w-2.5 h-2.5 text-blue-600" />
+            <div className="space-y-2 mb-4">
+              {pricingData.forex[activePeriod].features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-4 h-4 rounded-full bg-blue-500/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                    <Check className="w-2.5 h-2.5 text-blue-400" />
                   </div>
-                  <span className="text-sm text-gray-700">{feature}</span>
+                  <span className="text-xs text-gray-300 leading-relaxed">{feature}</span>
                 </div>
               ))}
-              <div className="text-xs text-gray-500 pl-6">
-                +{currentData.yearly.features.length - 5} more features
-              </div>
+            </div>
+
+            <div className="mb-4 p-3 bg-slate-800/50 rounded-lg border border-slate-700/30">
+              <p className="text-xs text-gray-400 italic leading-tight">
+                <span className="font-semibold text-blue-400">Ideal For:</span> {pricingData.forex[activePeriod].ideal}
+              </p>
             </div>
 
             <motion.button 
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg"
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
               whileHover={hoverAnimations.buttonHover}
               whileTap={tapAnimations.gentle}
             >
-              Get Started
+              Choose Forex
+            </motion.button>
+          </motion.div>
+
+          {/* Crypto Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            whileHover={hoverAnimations.cardHover}
+            className="bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 shadow-2xl shadow-black/20 hover:shadow-orange-500/10 hover:border-orange-500/30 transition-all duration-500"
+          >
+            <div className="text-center mb-4">
+              <div className="inline-flex items-center gap-2 bg-orange-500/20 text-orange-400 rounded-full px-2 py-1 mb-3">
+                <Bitcoin className="w-4 h-4" />
+                <span className="text-xs font-semibold">Crypto</span>
+              </div>
+              
+              <div className="mb-3">
+                <span className="text-4xl font-bold text-white">{pricingData.crypto[activePeriod].price}</span>
+                <span className="text-gray-400 ml-2">/ {pricingData.crypto[activePeriod].period}</span>
+              </div>
+            </div>
+
+            <div className="space-y-2 mb-4">
+              {pricingData.crypto[activePeriod].features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-4 h-4 rounded-full bg-blue-500/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                    <Check className="w-2.5 h-2.5 text-blue-400" />
+                  </div>
+                  <span className="text-xs text-gray-300 leading-relaxed">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mb-4 p-3 bg-slate-800/50 rounded-lg border border-slate-700/30">
+              <p className="text-xs text-gray-400 italic leading-tight">
+                <span className="font-semibold text-blue-400">Ideal For:</span> {pricingData.crypto[activePeriod].ideal}
+              </p>
+            </div>
+
+            <motion.button 
+              className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
+              whileHover={hoverAnimations.buttonHover}
+              whileTap={tapAnimations.gentle}
+            >
+              Choose Crypto
             </motion.button>
           </motion.div>
         </motion.div>

@@ -10,11 +10,23 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isOverLightSection, setIsOverLightSection] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
       setIsScrolled(scrollY > 50)
+      
+      // Hide/show navbar based on scroll direction
+      if (scrollY > lastScrollY && scrollY > 100) {
+        // Scrolling down
+        setIsVisible(false)
+      } else {
+        // Scrolling up
+        setIsVisible(true)
+      }
+      setLastScrollY(scrollY)
       
       // Check if navbar is over light sections
       const communitySection = document.getElementById('community')
@@ -42,7 +54,7 @@ export default function Navbar() {
     
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   const navItems = [
     { name: 'About', href: '#about' },
@@ -61,8 +73,8 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -77,8 +89,8 @@ export default function Navbar() {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/30 to-blue-600/30 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
               <div className="relative">
                 <Image
-                  src="/images/StoxifyLogo.PNG"
-                  alt="Stoxify Logo"
+                  src="/images/StoXifyLogo.PNG"
+                  alt="StoXify Logo"
                   width={32}
                   height={32}
                   className="rounded-lg"
@@ -88,18 +100,9 @@ export default function Navbar() {
             <div className="flex flex-col">
               <h1 className="text-xl font-bold font-display tracking-wide leading-tight">
                 <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-                  STOXIFY
+                  StoXify
                 </span>
               </h1>
-              <div className={`flex items-center space-x-1 text-xs font-medium leading-none ${
-                isScrolled && isOverLightSection ? 'text-gray-600' : 'text-gray-400'
-              }`}>
-                <span className="text-blue-500">STOCKS</span>
-                <span>•</span>
-                <span className="text-blue-500">CRYPTO</span>
-                <span>•</span>
-                <span className="text-blue-500">FOREX</span>
-              </div>
             </div>
           </motion.div>
 

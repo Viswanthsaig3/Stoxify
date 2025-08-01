@@ -63,15 +63,15 @@ export default function PrivacyPolicyPage() {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative">
                 <Image
-                  src="/images/StoxifyLogo.PNG"
-                  alt="Stoxify Logo"
+                  src="/images/StoXifyLogo.PNG"
+                  alt="StoXify Logo"
                   width={32}
                   height={32}
                   className="rounded-lg group-hover:scale-105 transition-transform duration-200"
                 />
               </div>
               <span className="text-xl font-bold font-display bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-                STOXIFY
+                StoXify
               </span>
             </Link>
 
