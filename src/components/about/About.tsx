@@ -22,29 +22,14 @@ export default function About() {
 
       <div className="relative z-10 flex items-center min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-            {/* Left Side - Professional Image */}
-            <div className="relative flex justify-start">
-              <div className="relative w-full max-w-lg">
-                <Image
-                  src="/images/traders.png"
-                  alt="Professional Traders"
-                  width={800}
-                  height={1000}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Right Side - Content */}
+          <div className="flex justify-center">
+            {/* Center Content */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-8 text-center max-w-4xl"
             >
               {/* Main Heading */}
               <motion.h1
@@ -82,7 +67,7 @@ export default function About() {
 
               {/* Buttons */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row justify-center gap-4"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -96,36 +81,47 @@ export default function About() {
                   BECOME A MEMBER
                 </motion.button>
 
-                <motion.button
+                <motion.a
+                  href="#pricing"
                   className="bg-transparent border-2 border-gray-400 hover:border-white text-gray-300 hover:text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  FOLLOW US ON X
-                </motion.button>
+                  LEARN MORE
+                </motion.a>
+
               </motion.div>
 
               {/* Social Proof */}
               <motion.div
-                className="flex items-center gap-4"
+                className="flex items-center justify-center gap-4"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                {/* Profile Images - Using placeholder avatars */}
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                      <div className="text-white font-bold text-sm">
-                        {String.fromCharCode(64 + i)}
-                      </div>
+                {/* Profile Images - Real member avatars */}
+                <div className="flex -space-x-3">
+                  {[
+                    { name: 'Arjun', image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=face' },
+                    { name: 'Kavya', image: 'https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?w=150&h=150&fit=crop&crop=face' },
+                    { name: 'Rohit', image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face' },
+                    { name: 'Ananya', image: 'https://images.unsplash.com/photo-1574034589502-9f8a1ed46fa7?w=150&h=150&fit=crop&crop=face' }
+                  ].map((member, i) => (
+                    <div key={i} className="w-14 h-14 rounded-full border-3 border-white overflow-hidden shadow-lg hover:scale-110 transition-transform duration-200">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={56}
+                        height={56}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   ))}
                 </div>
 
                 <div className="text-white">
-                  <span className="font-bold">3k+</span> in Followers on Twitter
+                  <span className="font-bold text-xl">10k+</span> <span className="text-gray-300">Active Members</span>
                 </div>
               </motion.div>
             </motion.div>

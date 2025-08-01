@@ -149,7 +149,7 @@ export default function Community() {
 
         {/* Premium card grid with unified animations */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto"
           {...containerAnimations.cardContainer}
         >
           {features.slice(0, 12).map((feature, index) => (
