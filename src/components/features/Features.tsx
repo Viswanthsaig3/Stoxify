@@ -131,7 +131,7 @@ export default function Features() {
             <span className="text-gray-900 font-extrabold tracking-tight">
               Why Choose{' '}
             </span>
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent font-extrabold tracking-tight">
               StoXify
             </span>
           </motion.h2>
@@ -165,22 +165,22 @@ export default function Features() {
               whileTap={tapAnimations.gentle}
               className="group relative"
             >
-              {/* Mini square cards with extreme rounded corners */}
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-[88px] p-6 sm:p-4 border border-white/60 shadow-2xl shadow-black/5 hover:border-white/80 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] hover:bg-white transition-all duration-500 h-full min-h-[120px] aspect-square ring-1 ring-gray-100/20">
+              {/* Responsive cards with better mobile layout */}
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-[88px] p-3 sm:p-4 border border-white/60 shadow-2xl shadow-black/5 hover:border-white/80 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] hover:bg-white transition-all duration-500 h-full min-h-[140px] sm:min-h-[120px] sm:aspect-square ring-1 ring-gray-100/20">
 
-                <div className="flex flex-col items-center text-center h-full justify-center">
+                <div className="flex flex-col items-center text-center h-full justify-center space-y-1 sm:space-y-2">
                   {/* Mini icon container */}
-                  <div className={`w-8 h-8 rounded-full ${feature.bgColor} flex items-center justify-center mb-2 transition-all duration-200 group-hover:scale-105`}>
-                    <feature.icon className={`w-4 h-4 ${feature.iconColor}`} />
+                  <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full ${feature.bgColor} flex items-center justify-center mb-1 sm:mb-2 transition-all duration-200 group-hover:scale-105`}>
+                    <feature.icon className={`w-3 h-3 sm:w-4 sm:h-4 ${feature.iconColor}`} />
                   </div>
 
-                  {/* Title with better readability */}
-                  <h3 className="text-sm font-semibold text-gray-900 mb-2 leading-tight">
+                  {/* Title with better mobile responsiveness */}
+                  <h3 className="text-xs sm:text-sm font-semibold text-gray-900 mb-1 sm:mb-2 leading-tight px-1">
                     {feature.title}
                   </h3>
 
-                  {/* Description with improved size */}
-                  <p className="text-xs text-gray-600 leading-snug text-center">
+                  {/* Description with better mobile sizing */}
+                  <p className="text-[10px] sm:text-xs text-gray-600 leading-tight text-center px-1 line-clamp-3">
                     {feature.description}
                   </p>
                 </div>

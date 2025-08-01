@@ -45,7 +45,7 @@ export default function Community() {
               Join India's Smartest
             </span>
             <br />
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent font-extrabold tracking-tight">
               Traders & Investors
             </span>
           </motion.h2>

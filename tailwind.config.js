@@ -147,10 +147,11 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-space-grotesk)', 'Space Grotesk', 'system-ui', 'sans-serif'],
         display: ['var(--font-plus-jakarta)', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         premium: ['var(--font-plus-jakarta)', 'Plus Jakarta Sans', 'sans-serif'],
-        body: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        body: ['var(--font-space-grotesk)', 'Space Grotesk', 'sans-serif'],
+        description: ['var(--font-space-grotesk)', 'Space Grotesk', 'system-ui', 'sans-serif'],
         inter: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['var(--font-jetbrains)', 'JetBrains Mono', 'monospace'],
       },

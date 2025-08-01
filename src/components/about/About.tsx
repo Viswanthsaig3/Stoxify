@@ -128,10 +128,10 @@ export default function About() {
                 {/* Profile Images - Real member avatars */}
                 <div className="flex -space-x-3">
                   {[
-                    { name: 'Arjun', image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=face' },
-                    { name: 'Kavya', image: 'https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?w=150&h=150&fit=crop&crop=face' },
-                    { name: 'Rohit', image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face' },
-                    { name: 'Ananya', image: 'https://images.unsplash.com/photo-1574034589502-9f8a1ed46fa7?w=150&h=150&fit=crop&crop=face' }
+                    { name: 'Arjun', image: '/images/man.jpeg' },
+                    { name: 'Kavya', image: '/images/women.jpeg' },
+                    { name: 'Rohit', image: '/images/owner.jpeg' },
+                    { name: 'Ananya', image: '/images/Untitled.jpeg' }
                   ].map((member, i) => (
                     <div key={i} className="w-14 h-14 rounded-full border-3 border-white overflow-hidden shadow-lg hover:scale-110 transition-transform duration-200">
                       <Image

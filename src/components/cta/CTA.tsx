@@ -57,7 +57,7 @@ export default function CTA() {
             <span className="text-gray-900 font-extrabold tracking-tight">
               Let's Grow and{' '}
             </span>
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent font-extrabold tracking-tight">
               Win Together
             </span>
           </motion.h2>
