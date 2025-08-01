@@ -4,9 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Users, TrendingUp, Shield, Star } from 'lucide-react'
 import { 
-  entranceAnimations, 
-  hoverAnimations, 
-  tapAnimations 
+  entranceAnimations
 } from '@/lib/animations'
 
 export default function CTA() {

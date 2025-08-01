@@ -4,8 +4,6 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Check, TrendingUp, Bitcoin, DollarSign } from 'lucide-react'
 import { 
-  hoverAnimations, 
-  tapAnimations, 
   containerAnimations 
 } from '@/lib/animations'
 
