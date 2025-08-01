@@ -2,259 +2,176 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Star, Quote } from 'lucide-react'
-import Image from 'next/image'
+import { Star } from 'lucide-react'
 import { 
-  entranceAnimations, 
-  hoverAnimations, 
-  tapAnimations
+  entranceAnimations
 } from '@/lib/animations'
 
 const testimonials = [
   {
-    name: "Arjun Mehta",
-    role: "IT Professional",
-    location: "Mumbai",
-    rating: 5,
-    text: "Started with zero knowledge about trading. STOXIFY's step-by-step approach helped me learn chart reading and understand market cycles. Now I'm consistently profitable.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    achievement: "Beginner to Pro"
-  },
-  {
-    name: "Meera Joshi", 
-    role: "Bank Employee",
-    location: "Pune",
-    rating: 5,
-    text: "Even with my finance background, I was making emotional trades. STOXIFY taught me proper risk management and patience. My portfolio is finally growing steadily.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b9e0e4b0?w=150&h=150&fit=crop&crop=face",
-    achievement: "Disciplined Trader"
-  },
-  {
-    name: "Karthik Reddy",
-    role: "Business Owner", 
-    location: "Bangalore",
-    rating: 5,
-    text: "I was losing money trying to day trade. The swing trading education here changed my perspective completely. Now I trade part-time and make consistent profits.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    achievement: "Swing Trading Pro"
-  },
-  {
-    name: "Priya Sharma",
-    role: "Marketing Manager",
+    name: "Sneha S.",
     location: "Delhi",
     rating: 5,
-    text: "The community support and educational content helped me build confidence in my trading decisions. I've learned to trust my analysis and stick to my strategy.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-    achievement: "Confident Trader"
+    text: "Stoxify transformed how I view markets. The pre-market outlook gives me direction and group support keeps me disciplined.",
+    date: "March 2024"
   },
   {
-    name: "Rajesh Kumar",
-    role: "Software Engineer",
+    name: "Alok Srivastava",
+    location: "Varanashi",
+    rating: 4,
+    text: "I used to chase stocks randomly. After Stoxify, I wait for breakout patterns with reduced risk and consistent profits.",
+    date: "January 2024"
+  },
+  {
+    name: "Mira K.", 
     location: "Chennai",
     rating: 5,
-    text: "Learning technical analysis through STOXIFY's structured approach made complex concepts simple. I can now identify high-probability setups with confidence.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-    achievement: "Technical Expert"
+    text: "Monthly webinars are thorough—no fluff, just useful charts and setups. I learn something valuable every time.",
+    date: "February 2024"
   },
   {
-    name: "Sneha Patel",
-    role: "Doctor",
-    location: "Ahmedabad",
-    rating: 5,
-    text: "Despite my busy schedule, the flexible learning approach helped me master swing trading fundamentals. I trade during market hours and it's working great.",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&h=150&fit=crop&crop=face",
-    achievement: "Part-time Success"
-  },
-  {
-    name: "Vikram Singh",
-    role: "Sales Manager",
-    location: "Jaipur",
-    rating: 5,
-    text: "The risk management strategies taught here saved me from major losses. I learned position sizing and stop-loss placement that actually works in real markets.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
-    achievement: "Risk Master"
-  },
-  {
-    name: "Anita Desai",
-    role: "Teacher",
-    location: "Surat",
-    rating: 5,
-    text: "As a beginner, I was overwhelmed by market complexity. STOXIFY's simple explanations and practical examples made everything clear. Now I trade confidently.",
-    image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=150&h=150&fit=crop&crop=face",
-    achievement: "Clear Understanding"
-  },
-  {
-    name: "Rohit Agarwal",
-    role: "CA Student",
-    location: "Kolkata",
-    rating: 5,
-    text: "The forex trading section was incredibly detailed. I learned currency pair analysis and now I'm making consistent profits in the forex market alongside my studies.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
-    achievement: "Forex Success"
-  },
-  {
-    name: "Deepika Nair",
-    role: "HR Executive",
-    location: "Kochi",
-    rating: 5,
-    text: "The crypto trading insights were game-changing. I learned to analyze blockchain projects and time my entries perfectly. My crypto portfolio has grown 300%.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-    achievement: "Crypto Expert"
-  },
-  {
-    name: "Amit Gupta",
-    role: "Pharmacist",
-    location: "Indore",
-    rating: 5,
-    text: "The community discussions and live sessions helped me understand market psychology. I no longer panic during market volatility and stick to my trading plan.",
-    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=150&h=150&fit=crop&crop=face",
-    achievement: "Calm Trader"
-  },
-  {
-    name: "Kavya Reddy",
-    role: "Architect",
+    name: "Vikram T.",
     location: "Hyderabad",
     rating: 5,
-    text: "The options trading strategies taught here are phenomenal. I learned covered calls and protective puts that generate steady income from my stock holdings.",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
-    achievement: "Options Pro"
+    text: "Stoxify's sector rotation insights changed how I pick trades. I see patterns before they unfold like institutions!",
+    date: "April 2024"
   },
   {
-    name: "Suresh Iyer",
-    role: "Retired Banker",
-    location: "Coimbatore",
-    rating: 5,
-    text: "At 58, I thought it was too late to learn trading. STOXIFY proved me wrong. The patient guidance helped me build a retirement income through smart investing.",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=face",
-    achievement: "Never Too Late"
+    name: "Priya N.",
+    location: "Kolkata",
+    rating: 4,
+    text: "I felt lost before Stoxify. Now I journal trades, follow SL/TP zones, and my mindset has grown stronger.",
+    date: "December 2024"
   },
   {
-    name: "Pooja Malhotra",
-    role: "Homemaker",
-    location: "Chandigarh",
+    name: "Aditya M.",
+    location: "Pune",
     rating: 5,
-    text: "As a stay-at-home mom, I wanted to contribute financially. STOXIFY taught me to trade during school hours. I now earn more than my previous job.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
-    achievement: "Financial Freedom"
+    text: "Community screeners saved me hours of scanning. Clean, logical setups perfect for balancing trading with full-time work.",
+    date: "November 2024"
   },
   {
-    name: "Manish Jain",
-    role: "Textile Trader",
-    location: "Ludhiana",
+    name: "Tejasvi U.",
+    location: "Jaipur",
     rating: 5,
-    text: "Coming from traditional business, stock market seemed risky. STOXIFY's systematic approach showed me how to trade with calculated risks and consistent profits.",
-    image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&h=150&fit=crop&crop=face",
-    achievement: "Calculated Risks"
+    text: "I finally feel like a real trader. Stoxify strategies gave me confidence to hold trades with logic, not emotion.",
+    date: "October 2024"
+  },
+  {
+    name: "Sachin V.",
+    location: "Ahmedabad",
+    rating: 4,
+    text: "Trading used to stress me with indecision. Now Stoxify ideas come with rationale—calming to follow proven structure.",
+    date: "September 2024"
+  },
+  {
+    name: "Neha G.",
+    location: "Lucknow",
+    rating: 5,
+    text: "This community taught me to combine fundamentals with technical signals. I now enter trades with confidence.",
+    date: "August 2024"
+  },
+  {
+    name: "Rohit S.",
+    location: "Noida",
+    rating: 5,
+    text: "Stoxify's post-market recap sessions are gold. Reviewing trades against setups helped spot my mistake patterns.",
+    date: "July 2024"
+  },
+  {
+    name: "Anjali C.",
+    location: "Goa",
+    rating: 4,
+    text: "Complete newbie to swing trading. Trade ideas explained so simply I understood chart patterns in days.",
+    date: "June 2024"
+  },
+  {
+    name: "Pranav D.",
+    location: "Bhopal",
+    rating: 5,
+    text: "I've improved my trade execution so much. I now always wait for confirmation and I've doubled my average risk-reward ratio.",
+    date: "May 2024"
+  },
+  {
+    name: "Shweta L.",
+    location: "Patna",
+    rating: 5,
+    text: "Economics and earnings calendars taught by Stoxify make me plan better around key events. My trades feel safer and more informed.",
+    date: "April 2025"
+  },
+  {
+    name: "Amit J.",
+    location: "Kochi",
+    rating: 4,
+    text: "Stoxify helped me build consistency over chaos. I no longer flip charts aimlessly; I now follow a structured market outlook.",
+    date: "March 2025"
+  },
+  {
+    name: "Karthik A.",
+    location: "Chennai",
+    rating: 5,
+    text: "Stoxify's gold trading strategies changed the game for me. I used to fear gold volatility—now I embrace it with confidence.",
+    date: "February 2025"
+  },
+  {
+    name: "Poonam T.",
+    location: "Bangalore",
+    rating: 5,
+    text: "The accuracy of the forex setups is unmatched. They follow a low-risk, high-reward system that actually works.",
+    date: "January 2025"
+  },
+  {
+    name: "Rishabh N.",
+    location: "Delhi",
+    rating: 4,
+    text: "Live news trading during NFP and CPI events taught me how to stay calm and trade smart. That confidence is priceless.",
+    date: "December 2024"
+  },
+  {
+    name: "Zoya H.",
+    location: "Hyderabad",
+    rating: 5,
+    text: "The CPI event session alone was worth the entire membership. It was like a live masterclass.",
+    date: "November 2024"
+  },
+  {
+    name: "Nitesh S.",
+    location: "Mumbai",
+    rating: 5,
+    text: "Before Stoxify, I never knew how to position myself around news events. Now I track pips and manage risk like a pro.",
+    date: "October 2024"
+  },
+  {
+    name: "Tanvi V.",
+    location: "Pune",
+    rating: 4,
+    text: "The 3500+ pips monthly potential isn't just a claim—it's a result of well-researched, logical setups.",
+    date: "September 2024"
   }
 ]
-
-// Duplicate testimonials for seamless infinite scroll
-const firstRowTestimonials = [...testimonials, ...testimonials]
-const secondRowTestimonials = [...testimonials.slice().reverse(), ...testimonials.slice().reverse()]
-
-// Premium Testimonial Card Component with unified animations
-const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => {
-  return (
-    <div className="flex-shrink-0 w-[420px] mx-3">
-      <motion.div 
-        className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 h-36"
-        whileHover={{
-          ...hoverAnimations.cardHover,
-          borderColor: "rgba(255, 255, 255, 0.4)"
-        }}
-        whileTap={tapAnimations.gentle}
-      >
-        <div className="flex gap-4 h-full">
-        {/* Left Side - User Info */}
-        <div className="flex flex-col items-center justify-center flex-shrink-0 w-20">
-          <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-white/20 mb-2">
-            {testimonial.image ? (
-              <Image
-                src={testimonial.image}
-                alt={`Testimonial from ${testimonial.name}`}
-                fill
-                className="object-cover"
-              />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">
-                  {testimonial.name.charAt(0)}
-                </span>
-              </div>
-            )}
-          </div>
-          <div className="flex items-center gap-0.5">
-            {[...Array(testimonial.rating)].map((_, starIndex) => (
-              <Star key={starIndex} className="w-2.5 h-2.5 text-yellow-400 fill-current" />
-            ))}
-          </div>
-        </div>
-
-        {/* Right Side - Content */}
-        <div className="flex-1 flex flex-col justify-between min-w-0">
-          {/* Quote and Text */}
-          <div className="flex-1">
-            <div className="flex items-start gap-2 mb-3">
-              <Quote className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
-              <p className="text-gray-300 text-sm leading-relaxed overflow-hidden">
-                <span className="line-clamp-3">
-                  {testimonial.text}
-                </span>
-              </p>
-            </div>
-          </div>
-
-          {/* Bottom Info */}
-          <div className="flex items-end justify-between mt-2">
-            <div className="min-w-0 flex-1">
-              <h4 className="text-white font-bold text-sm truncate">
-                {testimonial.name}
-              </h4>
-              <p className="text-gray-400 text-xs truncate">
-                {testimonial.role} • {testimonial.location}
-              </p>
-            </div>
-            <div className="bg-blue-500/20 rounded-lg px-2 py-1 ml-2 flex-shrink-0">
-              <div className="text-blue-400 font-semibold text-xs whitespace-nowrap">
-                🏆 {testimonial.achievement}
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </motion.div>
-    </div>
-  )
-}
 
 export default function Testimonials() {
   return (
     <section id="testimonials" className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900 overflow-hidden">
-      {/* Background Elements */}
+      {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
       </div>
 
-      {/* Candlestick Background Image */}
-      <div 
-        className="absolute inset-0 opacity-10 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/images/candlesticks.png)'
-        }}
-      ></div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Premium Header */}
+      {/* Premium Header - Contained */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-16">
         <motion.div
-          {...entranceAnimations.fadeInScale}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12 md:mb-16"
+          className="text-center"
         >
-          <motion.h2
+          <motion.h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-display leading-tight mb-3 md:mb-4"
-            {...entranceAnimations.heroTitle}
-            transition={{ ...entranceAnimations.heroTitle.transition, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
             viewport={{ once: true }}
           >
             <span className="text-white font-extrabold tracking-tight">
@@ -264,86 +181,155 @@ export default function Testimonials() {
               Stories
             </span>
           </motion.h2>
-        </motion.div>
-
-        {/* Enhanced First Row - Left to Right */}
-        <motion.div 
-          className="relative mb-8 overflow-hidden"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            className="flex"
-            animate={{
-              x: [0, `-${(testimonials.length * 408)}px`]
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 60,
-                ease: "linear",
-              },
-            }}
+          
+          <motion.p 
+            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
           >
-            {firstRowTestimonials.map((testimonial, index) => (
-              <motion.div
-                key={`first-${index}`}
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -10,
-                  transition: { type: "spring", stiffness: 300, damping: 20 }
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </motion.div>
-            ))}
-          </motion.div>
+            Real traders, real results. See how our community members have transformed their trading journey.
+          </motion.p>
         </motion.div>
-
-        {/* Enhanced Second Row - Right to Left */}
-        <motion.div 
-          className="relative mb-12 overflow-hidden"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            className="flex"
-            animate={{
-              x: [`-${(testimonials.length * 408)}px`, 0]
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 70,
-                ease: "linear",
-              },
-            }}
-          >
-            {secondRowTestimonials.map((testimonial, index) => (
-              <motion.div
-                key={`second-${index}`}
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -10,
-                  transition: { type: "spring", stiffness: 300, damping: 20 }
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-
-
       </div>
+
+      {/* Full Width Double Line Scrolling Testimonials */}
+      <div className="relative space-y-6 w-screen">
+          {/* First Row - Left to Right */}
+          <div className="flex overflow-hidden">
+            <motion.div
+              className="flex gap-8 min-w-fit"
+              animate={{
+                x: [100, -100 * testimonials.slice(0, 10).length - 100]
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: testimonials.slice(0, 10).length * 1.5,
+                  ease: "linear"
+                }
+              }}
+            >
+              {/* First half testimonials */}
+              {[...testimonials.slice(0, 10), ...testimonials.slice(0, 10)].map((testimonial, index) => (
+                <motion.div
+                  key={`row1-${index}`}
+                  className="flex-shrink-0 w-80"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 backdrop-blur-sm rounded-lg p-5 border border-slate-700/50 shadow-xl shadow-black/20 hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-500 min-h-[200px] flex flex-col">
+                    
+                    {/* Header with name and location */}
+                    <div className="flex justify-between items-center mb-3">
+                      <h4 className="text-base font-semibold text-white">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-xs text-blue-400 font-medium">
+                        {testimonial.location}
+                      </p>
+                    </div>
+
+                    {/* Star Rating and Date */}
+                    <div className="flex justify-between items-center mb-3">
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className={`w-3 h-3 ${
+                              i < testimonial.rating 
+                                ? 'text-blue-400 fill-blue-400' 
+                                : 'text-gray-600'
+                            }`} 
+                          />
+                        ))}
+                      </div>
+                      <div className="text-xs text-gray-400 font-medium">
+                        {testimonial.date}
+                      </div>
+                    </div>
+
+                    {/* Testimonial Text */}
+                    <p className="text-gray-300 text-xs leading-relaxed italic">
+                      "{testimonial.text}"
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Second Row - Right to Left */}
+          <div className="flex overflow-hidden">
+            <motion.div
+              className="flex gap-8 min-w-fit"
+              animate={{
+                x: [-100 * testimonials.slice(10).length - 100, 100]
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: testimonials.slice(10).length * 1.5,
+                  ease: "linear"
+                }
+              }}
+            >
+              {/* Second half testimonials */}
+              {[...testimonials.slice(10), ...testimonials.slice(10)].map((testimonial, index) => (
+                <motion.div
+                  key={`row2-${index}`}
+                  className="flex-shrink-0 w-80"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 backdrop-blur-sm rounded-lg p-5 border border-slate-700/50 shadow-xl shadow-black/20 hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-500 min-h-[200px] flex flex-col">
+                    
+                    {/* Header with name and location */}
+                    <div className="flex justify-between items-center mb-3">
+                      <h4 className="text-base font-semibold text-white">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-xs text-blue-400 font-medium">
+                        {testimonial.location}
+                      </p>
+                    </div>
+
+                    {/* Star Rating and Date */}
+                    <div className="flex justify-between items-center mb-3">
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className={`w-3 h-3 ${
+                              i < testimonial.rating 
+                                ? 'text-blue-400 fill-blue-400' 
+                                : 'text-gray-600'
+                            }`} 
+                          />
+                        ))}
+                      </div>
+                      <div className="text-xs text-gray-400 font-medium">
+                        {testimonial.date}
+                      </div>
+                    </div>
+
+                    {/* Testimonial Text */}
+                    <p className="text-gray-300 text-xs leading-relaxed italic">
+                      "{testimonial.text}"
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
     </section>
   )
 }

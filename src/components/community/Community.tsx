@@ -2,100 +2,13 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { TrendingUp, Target, Video, ClipboardList, Search, Zap, MessageCircle, BarChart3, Brain, Users } from 'lucide-react'
+import Image from 'next/image'
 import { 
   entranceAnimations, 
   hoverAnimations, 
   tapAnimations, 
   containerAnimations 
 } from '@/lib/animations'
-
-const features = [
-  {
-    icon: TrendingUp,
-    title: "Proven Trading Strategies",
-    description: "Access to the same strategies I use to generate asymmetric returns with low risk",
-    iconColor: "text-red-500",
-    bgColor: "bg-red-50"
-  },
-  {
-    icon: Target,
-    title: "Fast-Moving Identification",
-    description: "Learn to spot explosive stocks and perfect entry timing",
-    iconColor: "text-red-500",
-    bgColor: "bg-red-50"
-  },
-  {
-    icon: Video,
-    title: "Video Lessons",
-    description: "Step-by-step breakdowns of real trades and execution",
-    iconColor: "text-gray-700",
-    bgColor: "bg-gray-100"
-  },
-  {
-    icon: ClipboardList,
-    title: "Exclusive Watchlist",
-    description: "Get curated updates to stay ahead of the market",
-    iconColor: "text-orange-500",
-    bgColor: "bg-orange-50"
-  },
-  {
-    icon: Search,
-    title: "Scanning Techniques",
-    description: "Build your personalized watchlist with expert filters",
-    iconColor: "text-blue-500",
-    bgColor: "bg-blue-50"
-  },
-  {
-    icon: Zap,
-    title: "Swing Trading",
-    description: "Master short-term profits while keeping your day job",
-    iconColor: "text-yellow-500",
-    bgColor: "bg-yellow-50"
-  },
-  {
-    icon: MessageCircle,
-    title: "Live Monthly Q&As",
-    description: "Get your questions answered in interactive sessions",
-    iconColor: "text-gray-600",
-    bgColor: "bg-gray-50"
-  },
-  {
-    icon: BarChart3,
-    title: "Technical Analysis",
-    description: "Learn to spot key setups and read charts effectively",
-    iconColor: "text-blue-500",
-    bgColor: "bg-blue-50"
-  },
-  {
-    icon: Brain,
-    title: "Mindset & Discipline",
-    description: "Build psychological resilience for long-term success",
-    iconColor: "text-pink-500",
-    bgColor: "bg-pink-50"
-  },
-  {
-    icon: Users,
-    title: "Community Support",
-    description: "Connect with like-minded traders to grow together",
-    iconColor: "text-blue-500",
-    bgColor: "bg-blue-50"
-  },
-  {
-    icon: Target,
-    title: "Market Analysis",
-    description: "Master market conditions for optimal strategy selection",
-    iconColor: "text-red-500",
-    bgColor: "bg-red-50"
-  },
-  {
-    icon: BarChart3,
-    title: "Technical Analysis",
-    description: "Learn to spot key setups and read charts effectively",
-    iconColor: "text-blue-500",
-    bgColor: "bg-blue-50"
-  }
-]
 
 export default function Community() {
   return (
@@ -115,7 +28,7 @@ export default function Community() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Consistent Header */}
+        {/* Header */}
         <motion.div
           {...entranceAnimations.fadeInScale}
           viewport={{ once: true }}
@@ -129,67 +42,79 @@ export default function Community() {
             viewport={{ once: true }}
           >
             <span className="text-gray-900 font-extrabold tracking-tight">
-              Why Choose{' '}
+              Join India's Smartest
             </span>
+            <br />
             <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold tracking-tight">
-              Stoxify
+              Traders & Investors
             </span>
           </motion.h2>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed px-4 mb-8 sm:mb-12"
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed px-4 mb-8 sm:mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Get ready to level up your trading game.
+            We have pioneered and disrupted community based trading & investing format where you trade, learn and collaborate with traders across India.
           </motion.p>
         </motion.div>
 
-        {/* Premium card grid with unified animations */}
+        {/* 3D Card with Network Image */}
         <motion.div 
-          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto"
+          className="flex justify-center max-w-sm mx-auto"
           {...containerAnimations.cardContainer}
         >
-          {features.slice(0, 12).map((feature, index) => (
-            <motion.div
-              key={index}
-              {...entranceAnimations.scaleIn}
-              transition={{ 
-                ...entranceAnimations.scaleIn.transition,
-                delay: index * 0.1
-              }}
-              viewport={{ once: true }}
-              whileHover={hoverAnimations.cardHover}
-              whileTap={tapAnimations.gentle}
-              className="group relative"
-            >
-              {/* Mini square cards with extreme rounded corners */}
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-[88px] p-4 border border-white/60 shadow-2xl shadow-black/5 hover:border-white/80 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] hover:bg-white transition-all duration-500 h-full aspect-square ring-1 ring-gray-100/20">
+          <motion.div
+            {...entranceAnimations.scaleIn}
+            transition={{ 
+              ...entranceAnimations.scaleIn.transition,
+              delay: 0.3
+            }}
+            viewport={{ once: true }}
+            whileHover={hoverAnimations.cardHover}
+            whileTap={tapAnimations.gentle}
+            className="group relative"
+          >
+            {/* 3D Card with shadows */}
+            <div className="relative bg-white/95 backdrop-blur-sm rounded-xl p-4 border border-white/60 shadow-2xl shadow-black/10 hover:border-white/80 hover:shadow-[0_35px_60px_-12px_rgba(0,0,0,0.15)] hover:bg-white transition-all duration-500 ring-1 ring-gray-100/20 transform hover:-translate-y-2">
+              
+              {/* Network Image */}
+              <motion.div
+                className="mb-3 overflow-hidden rounded-lg shadow-lg"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image 
+                  src="/images/build_strong_network_connections.jpg" 
+                  alt="Build Strong Network Connections"
+                  width={300}
+                  height={200}
+                  className="w-full h-auto object-cover"
+                  priority
+                  quality={95}
+                />
+              </motion.div>
 
-                <div className="flex flex-col items-center text-center h-full justify-center">
-                  {/* Mini icon container */}
-                  <div className={`w-8 h-8 rounded-full ${feature.bgColor} flex items-center justify-center mb-2 transition-all duration-200 group-hover:scale-105`}>
-                    <feature.icon className={`w-4 h-4 ${feature.iconColor}`} />
-                  </div>
-
-                  {/* Title with better readability */}
-                  <h3 className="text-sm font-semibold text-gray-900 mb-2 leading-tight">
-                    {feature.title}
-                  </h3>
-
-                  {/* Description with improved size */}
-                  <p className="text-xs text-gray-600 leading-snug text-center">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              {/* Text under image */}
+              <motion.div
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 leading-tight">
+                  Build A Strong Network & Connections
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  Our community members come from various domains such as business, law, finance, technology, sports and investment banking.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
         </motion.div>
-
-
       </div>
     </section>
   )

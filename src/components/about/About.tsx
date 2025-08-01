@@ -12,13 +12,6 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
       </div>
 
-      {/* Candlestick Background Image - Same as Hero */}
-      <div
-        className="absolute inset-0 opacity-10 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/images/candlesticks.png)'
-        }}
-      ></div>
 
       <div className="relative z-10 flex items-center min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">

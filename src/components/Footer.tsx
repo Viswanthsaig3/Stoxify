@@ -39,13 +39,6 @@ export default function Footer() {
         <div className="absolute inset-0 bg-gradient-to-br from-midnightblue-950/95 via-black/90 to-midnightblue-900/95" />
       </div>
 
-      {/* Candlestick Background Image */}
-      <div 
-        className="absolute inset-0 opacity-5 hidden md:block bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/images/candlesticks.png)'
-        }}
-      ></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

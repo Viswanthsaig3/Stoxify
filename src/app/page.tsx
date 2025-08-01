@@ -30,6 +30,10 @@ const FAQ = dynamic(() => import('@/components/faq/FAQ'), {
   loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
 })
 
+const CTA = dynamic(() => import('@/components/cta/CTA'), {
+  loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
+})
+
 const Contact = dynamic(() => import('@/components/contact/Contact'), {
   loading: () => <div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>
 })
@@ -76,6 +80,13 @@ export default function Home() {
         <section className="bg-gradient-to-br from-midnightblue-950 via-black to-midnightblue-900">
           <Suspense fallback={<div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>}>
             <Testimonials />
+          </Suspense>
+        </section>
+        
+        {/* CTA Section - Light Blue Background */}
+        <section className="bg-gradient-to-br from-aliceblue-100 to-white-100">
+          <Suspense fallback={<div className="h-96 flex items-center justify-center"><LoadingAnimation /></div>}>
+            <CTA />
           </Suspense>
         </section>
         
