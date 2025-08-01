@@ -184,7 +184,7 @@ export default function Pricing() {
 
         {/* Pricing Cards */}
         <motion.div 
-          className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          className="grid lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4"
           {...containerAnimations.cardContainer}
         >
           
@@ -195,7 +195,7 @@ export default function Pricing() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
             whileHover={hoverAnimations.cardHover}
-            className="bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 backdrop-blur-sm rounded-xl p-4 border border-slate-700/50 shadow-2xl shadow-black/20 hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-500"
+            className="bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-black/90 backdrop-blur-sm rounded-xl p-5 sm:p-4 border border-slate-700/50 shadow-2xl shadow-black/20 hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-500"
           >
             <div className="text-center mb-4">
               <div className="inline-flex items-center gap-2 bg-green-500/20 text-green-400 rounded-full px-2 py-1 mb-3">
@@ -228,10 +228,13 @@ export default function Pricing() {
 
             <motion.button 
               className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
+              onClick={() => {
+                window.open('https://wa.me/917011957726?text=Hello%2C%20I%20want%20to%20join%20Stocks%20plan', '_blank')
+              }}
               whileHover={hoverAnimations.buttonHover}
               whileTap={tapAnimations.gentle}
             >
-              Choose Stocks
+              Join Stocks Plan
             </motion.button>
           </motion.div>
 
@@ -282,10 +285,13 @@ export default function Pricing() {
 
             <motion.button 
               className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
+              onClick={() => {
+                window.open('https://wa.me/917011957726?text=Hello%2C%20I%20want%20to%20join%20Forex%20plan', '_blank')
+              }}
               whileHover={hoverAnimations.buttonHover}
               whileTap={tapAnimations.gentle}
             >
-              Choose Forex
+              Join Forex Plan
             </motion.button>
           </motion.div>
 
@@ -329,10 +335,13 @@ export default function Pricing() {
 
             <motion.button 
               className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white font-semibold py-2.5 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl text-sm"
+              onClick={() => {
+                window.open('https://wa.me/917011957726?text=Hello%2C%20I%20want%20to%20join%20Crypto%20plan', '_blank')
+              }}
               whileHover={hoverAnimations.buttonHover}
               whileTap={tapAnimations.gentle}
             >
-              Choose Crypto
+              Join Crypto Plan
             </motion.button>
           </motion.div>
         </motion.div>

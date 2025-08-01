@@ -40,7 +40,7 @@ export default function Hero() {
 
       {/* Floating Elements */}
       <motion.div
-        className="absolute top-20 left-20 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"
+        className="absolute top-10 left-5 sm:top-20 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 bg-blue-500/10 rounded-full blur-xl"
         animate={{
           y: [0, -20, 0],
           x: [0, 10, 0],
@@ -53,7 +53,7 @@ export default function Hero() {
         }}
       />
       <motion.div
-        className="absolute bottom-40 right-20 w-24 h-24 bg-blue-400/10 rounded-full blur-xl"
+        className="absolute bottom-20 right-5 sm:bottom-40 sm:right-20 w-12 h-12 sm:w-24 sm:h-24 bg-blue-400/10 rounded-full blur-xl"
         animate={{
           y: [0, 15, 0],
           x: [0, -15, 0],
@@ -80,7 +80,7 @@ export default function Hero() {
               className="mb-4 sm:mb-6 md:mb-8"
             >
               <motion.h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-display leading-tight mb-3 md:mb-4 pt-20 sm:pt-16 md:pt-12"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-display leading-tight mb-3 md:mb-4 pt-20 sm:pt-16 md:pt-12"
                 {...entranceAnimations.heroTitle}
               >
                 <motion.span 
@@ -126,6 +126,12 @@ export default function Hero() {
                 className="w-full sm:w-auto relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 backdrop-blur-xl border border-blue-500/30 hover:border-blue-400/60 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-500 shadow-2xl hover:shadow-blue-500/60 group text-sm sm:text-base
                 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out
                 after:absolute after:inset-0 after:bg-gradient-to-r after:from-blue-400/0 after:via-blue-300/30 after:to-blue-400/0 after:translate-x-[-100%] hover:after:translate-x-[100%] after:transition-transform after:duration-[1500ms] after:delay-300"
+                onClick={() => {
+                  const pricingSection = document.getElementById('pricing')
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }}
                 whileHover={hoverAnimations.buttonHover}
                 whileTap={tapAnimations.scale}
               >
@@ -142,6 +148,12 @@ export default function Hero() {
 
               <motion.button
                 className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border-2 border-white/20 hover:border-white/40 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 backdrop-blur-sm group text-sm sm:text-base"
+                onClick={() => {
+                  const pricingSection = document.getElementById('pricing')
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }}
                 whileHover={hoverAnimations.buttonHover}
                 whileTap={tapAnimations.gentle}
               >

@@ -26,7 +26,7 @@ export default function About() {
             >
               {/* Main Heading */}
               <motion.h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -68,20 +68,31 @@ export default function About() {
               >
                 <motion.button
                   className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                  onClick={() => {
+                    const pricingSection = document.getElementById('pricing')
+                    if (pricingSection) {
+                      pricingSection.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   BECOME A MEMBER
                 </motion.button>
 
-                <motion.a
-                  href="#pricing"
+                <motion.button
                   className="bg-transparent border-2 border-gray-400 hover:border-white text-gray-300 hover:text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300"
+                  onClick={() => {
+                    const pricingSection = document.getElementById('pricing')
+                    if (pricingSection) {
+                      pricingSection.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   LEARN MORE
-                </motion.a>
+                </motion.button>
 
               </motion.div>
 

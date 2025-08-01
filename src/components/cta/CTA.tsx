@@ -11,7 +11,10 @@ import {
 
 export default function CTA() {
   const handleJoinNow = () => {
-    window.open('https://wa.me/your-whatsapp-number', '_blank')
+    const pricingSection = document.getElementById('pricing')
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   const handleWatchStories = () => {
@@ -99,7 +102,7 @@ export default function CTA() {
 
         {/* Action Buttons */}
         <motion.div 
-          className="flex flex-col sm:flex-row justify-center gap-6 max-w-2xl mx-auto"
+          className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 max-w-2xl mx-auto px-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
@@ -113,7 +116,7 @@ export default function CTA() {
             whileTap={tapAnimations.gentle}
           >
             <Users className="w-5 h-5" />
-            <span>Join Now</span>
+            <span>Become a Member</span>
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </motion.button>
 

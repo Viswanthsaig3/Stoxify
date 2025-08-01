@@ -134,13 +134,18 @@ export default function Navbar() {
             <motion.button 
               className="relative overflow-hidden bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl group
               before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:w-full before:h-full before:translate-x-[-200%] before:skew-x-12 hover:before:translate-x-[200%] before:transition-transform before:duration-[1800ms] before:ease-out"
-              onClick={() => window.open(CONTACT_INFO.whatsapp.url, '_blank')}
+              onClick={() => {
+              const pricingSection = document.getElementById('pricing')
+              if (pricingSection) {
+                pricingSection.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10 flex items-center space-x-2">
                 <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp Us</span>
+                <span>Join Community</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </motion.button>
@@ -209,7 +214,7 @@ export default function Navbar() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  className={`block px-4 py-4 rounded-lg font-medium transition-all duration-300 min-h-[44px] flex items-center ${
                     isOverLightSection
                       ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50'
                       : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -230,7 +235,10 @@ export default function Navbar() {
                   className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group"
                   onClick={() => {
                     setIsMobileMenuOpen(false)
-                    window.open(CONTACT_INFO.whatsapp.url, '_blank')
+                    const pricingSection = document.getElementById('pricing')
+                    if (pricingSection) {
+                      pricingSection.scrollIntoView({ behavior: 'smooth' })
+                    }
                   }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -239,7 +247,7 @@ export default function Navbar() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>WhatsApp Us</span>
+                  <span>Join Community</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </motion.button>
               </div>

@@ -247,8 +247,8 @@ export default function NewsTicker() {
       </div>
 
       {/* Gradient fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-midnightblue-950 to-transparent pointer-events-none"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-midnightblue-950 to-transparent pointer-events-none"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-midnightblue-950 to-transparent pointer-events-none"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-midnightblue-950 to-transparent pointer-events-none"></div>
     </div>
   )
 }

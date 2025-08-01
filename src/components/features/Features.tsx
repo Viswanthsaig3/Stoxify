@@ -149,7 +149,7 @@ export default function Features() {
 
         {/* Premium card grid with unified animations */}
         <motion.div 
-          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8 max-w-4xl mx-auto px-4 sm:px-0"
           {...containerAnimations.cardContainer}
         >
           {features.slice(0, 12).map((feature, index) => (
@@ -166,7 +166,7 @@ export default function Features() {
               className="group relative"
             >
               {/* Mini square cards with extreme rounded corners */}
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-[88px] p-4 border border-white/60 shadow-2xl shadow-black/5 hover:border-white/80 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] hover:bg-white transition-all duration-500 h-full aspect-square ring-1 ring-gray-100/20">
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-[88px] p-6 sm:p-4 border border-white/60 shadow-2xl shadow-black/5 hover:border-white/80 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] hover:bg-white transition-all duration-500 h-full min-h-[120px] aspect-square ring-1 ring-gray-100/20">
 
                 <div className="flex flex-col items-center text-center h-full justify-center">
                   {/* Mini icon container */}

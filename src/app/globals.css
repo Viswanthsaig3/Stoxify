@@ -76,26 +76,32 @@ html {
   scroll-padding-top: 4rem; /* Account for fixed navbar */
 }
 
+/* Mobile-first responsive font scaling */
 html {
-  font-size: 18px; /* Increased base font size from default 16px for better readability */
+  font-size: 16px; /* Standard mobile size */
 }
 
 /* Responsive font scaling for different screen sizes */
+@media (min-width: 480px) {
+  html {
+    font-size: 17px; /* Small tablets */
+  }
+}
 @media (min-width: 768px) {
   html {
-    font-size: 19px; /* Slightly larger on tablets */
+    font-size: 18px; /* Tablets */
   }
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 20px; /* Even larger on desktop for 125% scale comfort */
+    font-size: 19px; /* Desktop */
   }
 }
 
 @media (min-width: 1440px) {
   html {
-    font-size: 21px; /* Optimal for large screens */
+    font-size: 20px; /* Large screens */
   }
 }
 

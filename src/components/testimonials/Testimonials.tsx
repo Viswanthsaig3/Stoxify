@@ -195,7 +195,7 @@ export default function Testimonials() {
       </div>
 
       {/* Full Width Double Line Scrolling Testimonials */}
-      <div className="relative space-y-6 w-screen">
+      <div className="relative space-y-6 max-w-full overflow-hidden">
           {/* First Row - Left to Right */}
           <div className="flex overflow-hidden">
             <motion.div
@@ -216,7 +216,7 @@ export default function Testimonials() {
               {[...testimonials.slice(0, 10), ...testimonials.slice(0, 10)].map((testimonial, index) => (
                 <motion.div
                   key={`row1-${index}`}
-                  className="flex-shrink-0 w-80"
+                  className="flex-shrink-0 w-72 sm:w-80"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -283,7 +283,7 @@ export default function Testimonials() {
               {[...testimonials.slice(10), ...testimonials.slice(10)].map((testimonial, index) => (
                 <motion.div
                   key={`row2-${index}`}
-                  className="flex-shrink-0 w-80"
+                  className="flex-shrink-0 w-72 sm:w-80"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
