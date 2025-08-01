@@ -15,12 +15,12 @@ const pricingData = {
       price: "₹2,999",
       period: "3 months",
       features: [
-        "Daily Swing & Breakout Trade Ideas (Equity & Futures)",
-        "Short, Medium & Long-Term Investment Ideas",
-        "Pre-Market Watchlist + Weekly Market Outlook",
-        "Access to Exclusive Stock Screeners",
-        "Monthly Webinars & Group Discussions",
-        "Upcoming News Events & Economic Calendars"
+        { bold: "Daily Swing", normal: " & Breakout Trade Ideas (Equity & Futures)" },
+        { bold: "Investment Ideas", normal: " - Short, Medium & Long-Term Opportunities" },
+        { bold: "Pre-Market Watchlist", normal: " + Weekly Market Outlook" },
+        { bold: "Exclusive Stock Screeners", normal: " - Advanced Filtering Tools" },
+        { bold: "Monthly Webinars", normal: " & Group Discussions" },
+        { bold: "News Events", normal: " & Economic Calendars" }
       ],
       ideal: "Traders & investors wanting to build consistency in stock swing trading using technical and fundamental insights."
     },
@@ -28,12 +28,12 @@ const pricingData = {
       price: "₹7,999",
       period: "12 months",
       features: [
-        "Daily Swing & Breakout Trade Ideas (Equity & Futures)",
-        "Short, Medium & Long-Term Investment Ideas",
-        "Pre-Market Watchlist + Weekly Market Outlook",
-        "Access to Exclusive Stock Screeners",
-        "Monthly Webinars & Group Discussions",
-        "Upcoming News Events & Economic Calendars"
+        { bold: "Daily Swing", normal: " & Breakout Trade Ideas (Equity & Futures)" },
+        { bold: "Investment Ideas", normal: " - Short, Medium & Long-Term Opportunities" },
+        { bold: "Pre-Market Watchlist", normal: " + Weekly Market Outlook" },
+        { bold: "Exclusive Stock Screeners", normal: " - Advanced Filtering Tools" },
+        { bold: "Monthly Webinars", normal: " & Group Discussions" },
+        { bold: "News Events", normal: " & Economic Calendars" }
       ],
       ideal: "Traders & investors wanting to build consistency in stock swing trading using technical and fundamental insights."
     }
@@ -43,14 +43,14 @@ const pricingData = {
       price: "₹4,999",
       period: "3 months",
       features: [
-        "20+ Weekly Forex Trade Setups (Major & Minor Pairs)",
-        "Entry, Stop-Loss, and Target Price Details",
-        "High Win-Rate Strategies (Up to 83%) – Educational Use Only",
-        "Lot Sizing & Risk Management Guidance",
-        "3500+ Pips Monthly Potential (For Tracking & Study)",
-        "News Trading With the Community",
-        "Weekly Market Review & Watchlist",
-        "Monthly Webinars & Group Learning Sessions"
+        { bold: "20+ Weekly Setups", normal: " - Forex Trade Ideas (Major & Minor Pairs)" },
+        { bold: "Complete Trade Details", normal: " - Entry, Stop-Loss, and Target Prices" },
+        { bold: "High Win-Rate Strategies", normal: " (Up to 83%) – Educational Use Only" },
+        { bold: "Risk Management", normal: " & Lot Sizing Guidance" },
+        { bold: "3500+ Pips Monthly", normal: " Potential (For Tracking & Study)" },
+        { bold: "News Trading", normal: " With the Community" },
+        { bold: "Weekly Market Review", normal: " & Watchlist" },
+        { bold: "Monthly Webinars", normal: " & Group Learning Sessions" }
       ],
       ideal: "Beginners to intermediate traders who want structured forex learning through example-based trading plans."
     },
@@ -58,14 +58,14 @@ const pricingData = {
       price: "₹14,999",
       period: "12 months",
       features: [
-        "20+ Weekly Forex Trade Setups (Major & Minor Pairs)",
-        "Entry, Stop-Loss, and Target Price Details",
-        "High Win-Rate Strategies (Up to 83%) – Educational Use Only",
-        "Lot Sizing & Risk Management Guidance",
-        "3500+ Pips Monthly Potential (For Tracking & Study)",
-        "News Trading With the Community",
-        "Weekly Market Review & Watchlist",
-        "Monthly Webinars & Group Learning Sessions"
+        { bold: "20+ Weekly Setups", normal: " - Forex Trade Ideas (Major & Minor Pairs)" },
+        { bold: "Complete Trade Details", normal: " - Entry, Stop-Loss, and Target Prices" },
+        { bold: "High Win-Rate Strategies", normal: " (Up to 83%) – Educational Use Only" },
+        { bold: "Risk Management", normal: " & Lot Sizing Guidance" },
+        { bold: "3500+ Pips Monthly", normal: " Potential (For Tracking & Study)" },
+        { bold: "News Trading", normal: " With the Community" },
+        { bold: "Weekly Market Review", normal: " & Watchlist" },
+        { bold: "Monthly Webinars", normal: " & Group Learning Sessions" }
       ],
       ideal: "Beginners to intermediate traders who want structured forex learning through example-based trading plans."
     }
@@ -75,12 +75,12 @@ const pricingData = {
       price: "₹3,999",
       period: "3 months",
       features: [
-        "20+ crypto setups weekly (scalping, swing, trend reversal patterns)",
-        "Learning-focused breakdown of entries, SL, and target zones",
-        "Weekly crypto market watchlists and sentiment analysis",
-        "News-based strategy sessions with real-time community chat",
-        "Monthly webinars on crypto trading strategies and market cycles",
-        "Peer discussions, Q&A, and member-led analysis review"
+        { bold: "20+ Crypto Setups", normal: " weekly (scalping, swing, trend reversal patterns)" },
+        { bold: "Trade Breakdown", normal: " - entries, SL, and target zones" },
+        { bold: "Weekly Watchlists", normal: " & market sentiment analysis" },
+        { bold: "News-Based Sessions", normal: " with real-time community chat" },
+        { bold: "Monthly Webinars", normal: " on trading strategies and market cycles" },
+        { bold: "Community Discussions", normal: " - Q&A and analysis review" }
       ],
       ideal: "Crypto enthusiasts looking to understand market patterns and develop structured trading approaches."
     },
@@ -88,12 +88,12 @@ const pricingData = {
       price: "₹11,999",
       period: "12 months",
       features: [
-        "20+ crypto setups weekly (scalping, swing, trend reversal patterns)",
-        "Learning-focused breakdown of entries, SL, and target zones",
-        "Weekly crypto market watchlists and sentiment analysis",
-        "News-based strategy sessions with real-time community chat",
-        "Monthly webinars on crypto trading strategies and market cycles",
-        "Peer discussions, Q&A, and member-led analysis review"
+        { bold: "20+ Crypto Setups", normal: " weekly (scalping, swing, trend reversal patterns)" },
+        { bold: "Trade Breakdown", normal: " - entries, SL, and target zones" },
+        { bold: "Weekly Watchlists", normal: " & market sentiment analysis" },
+        { bold: "News-Based Sessions", normal: " with real-time community chat" },
+        { bold: "Monthly Webinars", normal: " on trading strategies and market cycles" },
+        { bold: "Community Discussions", normal: " - Q&A and analysis review" }
       ],
       ideal: "Crypto enthusiasts looking to understand market patterns and develop structured trading approaches."
     }
@@ -214,9 +214,11 @@ export default function Pricing() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="h-full bg-white/8 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col"
+            className="h-full bg-white/8 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col relative overflow-hidden
+            before:absolute before:inset-0 before:bg-gradient-to-br before:from-green-500/10 before:via-transparent before:to-blue-500/10 before:opacity-50 before:blur-xl before:scale-150
+            after:absolute after:inset-0 after:bg-gradient-to-tr after:from-transparent after:via-white/5 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500"
           >
-            <div className="flex items-start justify-between mb-6">
+            <div className="relative z-10 flex items-start justify-between mb-6">
               <div>
                 <span className="text-4xl font-bold text-white">{pricingData.stocks[activePeriod].price}</span>
               </div>
@@ -226,18 +228,21 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="space-y-3 mb-6 flex-grow">
+            <div className="relative z-10 space-y-3 mb-6 flex-grow">
               {pricingData.stocks[activePeriod].features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full border-2 border-white flex items-center justify-center mt-0.5 flex-shrink-0 group-hover:border-gray-300 transition-all duration-300">
                     <Check className="w-3 h-3 text-white font-bold stroke-[3]" />
                   </div>
-                  <span className="text-sm text-gray-200 leading-relaxed">{feature}</span>
+                  <span className="text-sm text-gray-200 leading-relaxed">
+                    <span className="font-bold text-white">{feature.bold}</span>
+                    {feature.normal}
+                  </span>
                 </div>
               ))}
             </div>
 
-            <div className="mb-6 p-4 bg-white/5 backdrop-blur-sm rounded-xl">
+            <div className="relative z-10 mb-6 p-4 bg-white/5 backdrop-blur-sm rounded-xl">
               <p className="text-sm text-gray-200 leading-relaxed">
                 <span className="font-semibold text-green-400">Ideal For:</span> {pricingData.stocks[activePeriod].ideal}
               </p>
@@ -264,7 +269,9 @@ export default function Pricing() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="h-full bg-white/12 backdrop-blur-sm rounded-xl p-6 border-2 border-blue-400/40 hover:border-blue-400/60 shadow-xl hover:shadow-2xl transition-all duration-300 relative group flex flex-col"
+            className="h-full bg-white/12 backdrop-blur-sm rounded-xl p-6 border-2 border-blue-400/40 hover:border-blue-400/60 shadow-xl hover:shadow-2xl transition-all duration-300 relative group flex flex-col overflow-hidden
+            before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500/15 before:via-purple-500/10 before:to-blue-600/15 before:opacity-60 before:blur-xl before:scale-150
+            after:absolute after:inset-0 after:bg-gradient-to-tr after:from-transparent after:via-blue-300/10 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500"
           >
             {/* Popular Badge */}
             <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
@@ -283,18 +290,21 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="space-y-3 mb-6 flex-grow">
+            <div className="relative z-10 space-y-3 mb-6 flex-grow">
               {pricingData.forex[activePeriod].features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full border-2 border-white flex items-center justify-center mt-0.5 flex-shrink-0 group-hover:border-gray-300 transition-all duration-300">
                     <Check className="w-3 h-3 text-white font-bold stroke-[3]" />
                   </div>
-                  <span className="text-sm text-gray-200 leading-relaxed">{feature}</span>
+                  <span className="text-sm text-gray-200 leading-relaxed">
+                    <span className="font-bold text-white">{feature.bold}</span>
+                    {feature.normal}
+                  </span>
                 </div>
               ))}
             </div>
 
-            <div className="mb-6 p-4 bg-white/5 backdrop-blur-sm rounded-xl">
+            <div className="relative z-10 mb-6 p-4 bg-white/5 backdrop-blur-sm rounded-xl">
               <p className="text-sm text-gray-200 leading-relaxed">
                 <span className="font-semibold text-blue-400">Ideal For:</span> {pricingData.forex[activePeriod].ideal}
               </p>
@@ -321,9 +331,11 @@ export default function Pricing() {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="h-full bg-white/8 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col"
+            className="h-full bg-white/8 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl transition-all duration-300 group flex flex-col relative overflow-hidden
+            before:absolute before:inset-0 before:bg-gradient-to-br before:from-orange-500/10 before:via-transparent before:to-yellow-500/10 before:opacity-50 before:blur-xl before:scale-150
+            after:absolute after:inset-0 after:bg-gradient-to-tr after:from-transparent after:via-white/5 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500"
           >
-            <div className="flex items-start justify-between mb-6">
+            <div className="relative z-10 flex items-start justify-between mb-6">
               <div>
                 <span className="text-4xl font-bold text-white">{pricingData.crypto[activePeriod].price}</span>
               </div>
@@ -333,18 +345,21 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="space-y-3 mb-6 flex-grow">
+            <div className="relative z-10 space-y-3 mb-6 flex-grow">
               {pricingData.crypto[activePeriod].features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full border-2 border-white flex items-center justify-center mt-0.5 flex-shrink-0 group-hover:border-gray-300 transition-all duration-300">
                     <Check className="w-3 h-3 text-white font-bold stroke-[3]" />
                   </div>
-                  <span className="text-sm text-gray-200 leading-relaxed">{feature}</span>
+                  <span className="text-sm text-gray-200 leading-relaxed">
+                    <span className="font-bold text-white">{feature.bold}</span>
+                    {feature.normal}
+                  </span>
                 </div>
               ))}
             </div>
 
-            <div className="mb-6 p-4 bg-white/5 backdrop-blur-sm rounded-xl">
+            <div className="relative z-10 mb-6 p-4 bg-white/5 backdrop-blur-sm rounded-xl">
               <p className="text-sm text-gray-200 leading-relaxed">
                 <span className="font-semibold text-orange-400">Ideal For:</span> {pricingData.crypto[activePeriod].ideal}
               </p>

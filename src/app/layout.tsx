@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
+import { Inter, Manrope, Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -9,10 +9,10 @@ const inter = Inter({
   display: 'swap',
 })
 
-const spaceGrotesk = Space_Grotesk({
+const manrope = Manrope({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-manrope',
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
   display: 'swap',
 })
 
@@ -94,7 +94,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
       </head>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${plusJakarta.variable} ${jetbrains.variable} font-sans antialiased bg-black-300`}>
+      <body className={`${inter.variable} ${manrope.variable} ${plusJakarta.variable} ${jetbrains.variable} font-sans antialiased bg-black-300`}>
         {children}
       </body>
     </html>
